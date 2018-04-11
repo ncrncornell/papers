@@ -1,0 +1,594 @@
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{LaTeXparent=0,0,Presentation-CAFE-displacement-subdoc.tex}
+% $Id: Presentation-subdoc.tex 1720 2015-09-25 14:29:12Z lv39 $
+% $URL: https://forge.cornell.edu/svn/repos/ncrn-cornell/branches/papers/PSD2014/text/Presentation/Presentation-subdoc.tex $
+\section{Context}
+\begin{frame}
+\begin{block}{Funding}
+\begin{itemize}
+\item Vilhuber's work is partially funded by NSF Grant \href{http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1042181}{\#1042181}. 
+\end{itemize}
+\end{block}
+\begin{block}{Disclaimer}
+This paper reports the results of research and analysis 
+undertaken by Census Bureau staff. It has undergone a more limited review by the Census Bureau than its 
+official publications. This report is released to inform interested parties and to encourage discussion. Any 
+findings, conclusions or opinions are those of the authors. They do not necessarily reflect those of the Center for 
+Economic Studies, the U.S. Census Bureau, or the National Science Foundation. 
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\begin{block}{Business Dynamics}
+"The U.S. economy is comprised of over 6 million establishments with paid employees. The population of these businesses is constantly churning -- some businesses grow, others decline and yet others close. New businesses are constantly replenishing this pool."[\href{https://www.census.gov/ces/dataproducts/bds/overview.html}{*}]
+\end{block}
+\begin{block}{Questions}
+\begin{itemize}
+\item Small businesses' contribution to job and productivity growth 
+\item ... or is it \alert{young} businesses' contribution?
+\item Dynamics of businesses in their early (post-founding) years
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Data for Business Statistics in the United States}
+\begin{block}{Provided by the US Census Bureau}
+\begin{itemize}
+\item County Business Patterns (CBP)
+\item Annual Survey of Manufactures (ASM)
+\item and over 100 separate additional surveys..
+\item Economic Census
+\item Business Dynamic Statistics (BDS)
+\item Quarterly Workforce Indicators (QWI)
+\end{itemize}
+\end{block}
+\pause
+\begin{block}{Provided by others}
+\begin{itemize}
+\item Quarterly Census of Employment and Wages (QCEW, by BLS)
+\item Compustat (S \& P)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Business Microdata at the Census Bureau}
+\begin{center}
+\includegraphics[height=0.8\textheight]{./LBD_Provenance_v2}
+\end{center}
+\end{frame}
+
+\begin{frame}{Business Microdata at the Census Bureau}
+\only<1>{
+\begin{center}
+\includegraphics[height=0.8\textheight]{./LBD_Provenance_v2_tilted}
+\end{center}}
+\pause
+\only<2>{
+\begin{center}
+\includegraphics[height=0.8\textheight]{./LBD_Provenance_v2_tilted_hilite}
+\end{center}}
+\end{frame}
+
+
+
+\begin{frame}{Business Dynamic Statistics}
+\begin{block}{Annual data series}
+\begin{itemize}
+\item Establishment - level business dynamics: by firm age and firm size
+\item Employment - job creation and destruction
+\item Job expansions and contractions
+\item Number of establishments
+\item Establishment openings and closings
+\item Number of startups and firm shutdowns   
+\end{itemize}
+\end{block}
+More info: \href{http://www.census.gov/ces/dataproducts/bds/}{www.census.gov/ces/dataproducts/bds/}
+\end{frame}
+
+\begin{frame}{Available BDS tabulations}
+\begin{block}{Firm and Establishment Characteristics}
+\begin{itemize}
+\item Sector
+\item Firm Size
+\item Firm Age
+\item Initial Firm Size
+\item Geography (State, Metro/Non-metro, MSA)
+\item Cross-tabulations by up to three of these characteristics
+\end{itemize}
+\end{block}
+\begin{block}{Lots of detail}
+62 very detailed tables
+\end{block}
+\end{frame}
+
+\begin{frame}{Disclosure avoidance in the BDS}
+\begin{block}{P-percent rule with secondary suppressions}
+\begin{itemize}[<+->]
+\item Cells where the top 2 firms account for more than \emph{P} percent of the total value of the cell are flagged for suppression
+\item \emph{P} value is not disclosed
+\item Trivially: cells with fewer than 3 firms represented are always suppressed
+\item Secondary suppressions: ``minimize the amount of information loss in a given table row or column''.
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Extent of suppression}
+%\csvautotabular{programs/bds_e_suppressions_multi.csv}
+\tiny
+\begin{table}
+\caption{Suppressions in establishment-level BDS\label{tab:bds_e}}
+\centering
+\begin{tabular}{|lc|r|rr|}\hline%
+               &                 &\bfseries Number &\multicolumn{2}{c|}{\bfseries Suppressions (\%)}\\
+\cline{4-5}
+\bfseries Type & \bfseries Level &\bfseries of     &                            & \bfseries Job creation\\
+                            &                              &\bfseries  cells& \bfseries Any  &\bfseries by entrants\\
+\hline
+\csvreader[head to column names,late after line=\\,late after last line=\\\hline]%
+{../programs/bds_e_suppressions_multi.csv}{}%
+{\typename & \level & \cells & \percentsup  & \jcbirths}%
+\multicolumn{5}{p{0.6\textwidth}}{\footnotesize Note: Cells are year $x$ categories, where the 
+number of categories varies by published table.}
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{Extent of suppression}
+\begin{center}
+\includegraphics[height=0.8\textheight]{./suppressions_estabs}
+\end{center}
+\end{frame}
+
+\section[Solution]{Proposed solution}
+
+\begin{frame}{Business Microdata at the Census Bureau}
+\begin{center}
+\includegraphics[height=0.8\textheight]{./LBD_Provenance_v2_tilted_hilite}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Purpose of SynLBD}
+\begin{block}{The SynLBD is }
+\begin{itemize}[<+->]
+\item derived from confidential Longitudinal Business Database (LBD, \cite{MirandaJarmin2002})
+\item designed to facilitate researcher access to establishment microdata (LBD)
+\item while preserving the confidentiality of establishment/business data. 
+\item part of a larger strategy by the Census Bureau to provide \textit{better 
+statistics on business dynamics} CNSTAT  \cite{CNSTATBusinessDynamics}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Contents of (Syn)LBD}
+\begin{block}{Data elements}
+\begin{itemize}
+\item  longitudinal establishment identifiers (created using probabilistic matching \cite{MirandaJarmin2002}) \onslide<2->{\alert{Masked}}
+\item information on birth, death \onslide<2->{\alert{Synthesized}}
+\item  employment and payroll over time \onslide<2->{\alert{Synthesized}}
+\item location \onslide<2->{\alert{Suppressed}}
+\item industry \onslide<2->{\alert{Released}}
+\item firm  affiliation of  employer establishments \onslide<2->{\alert{$\rightarrow$ next version}}
+\end{itemize}
+\end{block}
+\pause
+\pause
+\begin{block}{Complete description}
+Kinney et al \cite{KinneyEtAl2011}
+\end{block}
+\tiny \hfill[\hyperref[sec:SynLBD_details]{more}]
+\end{frame}
+
+\begin{frame}
+\begin{block}{Putting two and two together...}
+\begin{itemize}[<+->]
+\item[] 
+V2.0 of SynLBD released by Census Bureau's Disclosure Review Board in 2011
+\item[]
+Let's combine public-use data to fill in suppressions
+
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Combining synthetic and protected data}
+\begin{block}{Initially...}
+\begin{itemize}
+\item[...] explored as part of \href{http://www.myweb.ttu.edu/rgitting/}{Kaj Gitting}'s thesis \cite{Gittings2009thesis}
+\item[...] expanded as part of our FCSM paper \cite{AbowdEtAl2012}
+\end{itemize}
+\end{block}
+\begin{block}{Could it work for BDS?}
+\begin{itemize}
+\item LBD underlies BDS
+\item SynLBD derived from LBD
+\item SynLBD proven analytic validity
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Analytic validity}
+\begin{center}
+\only<1>{
+\includegraphics[height=0.8\textheight]{./CES-WP-11-04-page37}
+}
+\only<2>{
+\includegraphics[width=\textwidth]{./CES-WP-11-04-page37-hilite}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}{Analytic validity}
+\begin{center}
+\includegraphics[width=\textwidth]{./CES-WP-11-04-page39-hilite}
+\end{center}
+\end{frame}
+
+
+
+
+\begin{frame}{Notation}
+
+\begin{block}{Base variable}
+Establishment employment $e_{jt}$. 
+\end{block}
+\begin{block}{Example}
+\begin{eqnarray}
+\label{eq:e_birth}
+birth_{jt} &=& \left \lbrace 
+\begin{array}{rl}
+1 &\mbox{if}~~  e_{jt} > 0 ~~ \mbox{and}  ~~e_{jt-s} = 0 ~~\forall s\geq 1~~\\
+0 &\mbox{otherwise}
+\end{array} \right .
+\end{eqnarray}
+\begin{eqnarray}
+\label{eq:e_birth}
+jcbirth_{jt} &=& \left \lbrace 
+\begin{array}{rl}
+e_{jt}-e{jt-1} &\mbox{if}~~  e_{jt} > 0 ~~ \mbox{and}  ~~e_{jt-s} = 0 ~~\forall s\geq 1~~\\
+0 &\mbox{otherwise}
+\end{array} \right .
+\end{eqnarray}
+\end{block}
+\end{frame}
+
+\begin{frame}{Notation}
+\begin{block}{Synthetic values}
+Synthesized version of variable $x_{jt}$ is 
+denoted $\tilde{x}_jt$. 
+\end{block}
+\begin{block}{Cells}
+\begin{itemize}
+\item[]
+Collections of characteristics $k_t(j)$ (industry, geography, establishment or firm age and size)
+\item[]  $j \in 
+K_t^\prime$ describes the set of firms at time $t$ such that $k_t(j)=k^\prime$.  
+
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Notation}
+\begin{block}{Aggregations}
+Generically in capital letters:
+\begin{equation}
+\label{eq:national_e}
+E_{\cdot t} = \sum_{i=1}^J e_{it},
+\end{equation}
+
+Aggregations across establishments having characteristics $k^\prime$ at 
+time $t$
+\begin{equation}
+\label{eq:sum_X}
+X_{k^\prime t} =  \sum_{j \in K_t^\prime} x_{jt}
+\end{equation}
+\end{block}
+\end{frame}
+
+\begin{frame}{Suppression rules }
+\begin{block}{Suppression rules}
+for (aggregate) variable $X$ are captured by $I_{t}^X$, such that the 
+releasable variable $X^o$  under the current regime can be described by
+
+\begin{eqnarray}
+\label{eq:supp_x}
+X_{k^\prime t}^o &=& \left \lbrace 
+\begin{array}{rl}
+X_{k^\prime t} &\mbox{if}~~  I_{kt}^X = 1 \\
+\mbox{missing} &\mbox{otherwise}
+\end{array} \right .
+\end{eqnarray}
+\end{block}
+\end{frame}
+
+
+
+\subsection{Algorithm 1: Drop-in}
+\begin{frame}[fragile]{Algorithm 1}
+
+We can now express the ``drop-in'' algorithm, leading to the released variable $X^{(i)}$, as:
+\begin{block}{BDS$^{(i)}$}
+\begin{algorithm}
+\begin{algorithmic}
+\If {$I_{t}^X = 1$ }
+    \State {$X_{k^\prime t}^{(i)} = X_{k^\prime t} $}
+\Else
+        \State {$X_{k^\prime t}^{(i)} =\tilde{X}_{k^\prime t} $}
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+\end{block}
+\end{frame}
+
+%\begin{note}
+%Thus, simply computing a ``SynBDS'', based on the \ac{SynLBD}, in parallel to the 
+%computation 
+%of the \ac{BDS} (based on the confidential \ac{LBD}), and replacing suppressed cells with their 
+%fully synthetic counterparts, yields a dataset without missing observations. Variations can 
+%encompass using the average of multiple implicates  as the replacement value. In 
+%general, increasing the number of implicates will improve the analytic validity, but reduce the 
+%protection provided by the synthesis process. 
+%
+%Because no time-consistency is imposed, this method can lead to seam biases or higher 
+%intertemporal variance. We will return to this issue in Section~\ref{sec:analysis}. For later 
+%reference, we denote the tabulations created by Algorithm~1 as \textbf{BDS$^{(i)}$}.
+%\end{note}
+
+
+\section[Results]{Early results}
+
+
+\begin{frame}{Analysis}
+\begin{block}{Analysis}
+\begin{itemize}[<+->]
+\item We implemented Algorithm~1 for \ac{BDS} tabulations by \alert{establishment age and 
+size} ({\tt bds\_e\_agesz}). 
+\item About 26\% of all cells have some suppression
+\item Here: variable, ``Job Creation by establishment births'' ({\tt job\_creation\_births}). 
+\end{itemize}
+\end{block}
+\end{frame}
+
+\subsection{Protection}
+\begin{frame}{Protection}
+\begin{block}{Protection through synthesis}
+\begin{itemize}[<+->]
+\item Cells are filled in with data available to a wide audience (public-use)
+\item ....(but which typically cannot create tabulations)
+\item ....(future tables will contain variables which are not currently available on the synthetic 
+data file)
+\item Structurally: the synthetic data are ... fully synthetic (discussed in Kinney et al, 2011)
+\item Additional comparison: differences in each cell
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}{From Kinney et al}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\includegraphics[height=0.8\textheight]{CES-WP-11-04-page40-figure13}
+\end{column}
+\begin{column}{0.3\textwidth}
+The comparison is for individual establishments, not within cells
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Cell-wise comparison}
+\begin{block}{Criteria for cell-wise comparison}
+\begin{itemize}
+\item Differences in count of establishment in a cell
+\item Differences in values of cells
+\end{itemize}
+\end{block}
+Not done yet.
+\end{frame}
+
+
+\subsection{Analytic validity}
+
+\begin{frame}{Analytic validity: time-series}
+\begin{block}{Setup}
+Estimate an AR(2) process for each of 
+$X_{k^\prime t}$, $X_{k^\prime t}^{s}$, and $X_{k^\prime t}^{(i)}$
+\end{block}
+\begin{block}{Metrics}
+\begin{itemize}
+\item  number of missing time-series estimates %(repeated suppressions in $X_{k^\prime t}^{s}$ 
+%may lead to time-series that are too short),
+\item the number of significant coefficients for the first lag of the AR(2)
+\item \emph{coverage}, the 
+percentage of regressions where the true $\rho_1$ lies within the confidence band around the 
+coefficient estimated from the comparison $\rho_1^{s}$ and $\rho_1^{(i)}$, 
+\item interval overlap measure $J_k$ \cite{tas2006}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]{Analytic validity}
+\begin{center}
+%\small
+%\begin{table}
+%\caption{Analytic validity of published data\label{tab:bds_e_pub2}}
+%\centering
+%%\begin{tabular}{|lc|r|rrr|}\hline%
+%\csvreader[tabular=|l|r|rr|rrr|rr|rr|,table head=\hline 
+%	&Number 
+%	&\multicolumn{2}{c|}{} 
+%	& \multicolumn{3}{c|}{Percent} 
+%	&\multicolumn{2}{c|}{}
+%	&\multicolumn{2}{c|}{Interval}\\
+%Variable 
+%	&feasible 
+%	& \multicolumn{2}{c|}{Missing}                
+%	& \multicolumn{3}{c|}{significant}
+%	&\multicolumn{2}{c|}{Coverage}
+%	&\multicolumn{2}{c|}{overlap}\\
+%    & $X_{k^\prime t}^{}$ 
+%    & $X_{k^\prime t}^{s}$ & $X_{k^\prime t}^{(i)}$
+%    & $\rho_1$ & $\rho_1^{s}$&$\rho_1^{(i)}$
+%    & $\rho_1^{s}$&$\rho_1^{(i)}$
+%    & $J_1^{s}$&$J_1^{(i)}$
+%    \\\hline,
+%	late after line=\\,late after last line=\\\hline]%
+%{../programs/r_e_agesz_all_combined_mod.csv}{Variable=\V,Jk=\Jk,Jks=\Jks,coverage=\mycr,coverages=\mycs,missing=\mr,missings=\m2,significanti2=\si,number=\N,significantr2=\sr,significant22=\s2}%
+%{\V & \N & \mr & \m2 & \si &\sr & \s2 &\mycr & \mycs & \Jk & \Jks}%
+%
+%\end{table}
+
+
+%% Alternatively:
+\includegraphics[width=\textwidth]{table2}
+
+\end{center}
+\end{frame}
+
+%\begin{frame}{Notation}
+%\begin{block}{Aggregations}
+%E.g. national employment 
+%\begin{equation}
+%\label{eq:national_e}
+%E_{\cdot t} = \sum_{i=1}^J e_{it},
+%\end{equation}
+%(national) establishment births are
+%\begin{equation}
+%\label{eq:national_birth}
+%Birth_{\cdot t} = \sum_{i=1}^J birth_{it},
+%\end{equation}
+%and job creation by births
+%\begin{equation}
+%\label{eq:national_jcbirth}
+%JCBirth_{\cdot t} = \sum_{i=1}^J jcbirth_{it},
+%\end{equation}
+%
+%\end{block}
+%\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Conclusion}
+
+\begin{frame}{Open issues}
+\begin{block}{Unexplored issues}
+\begin{itemize}[<+->]
+\item SynLBD is synthesized independently within industry
+\item Geography is not synthesized, not considered within synthesis process (and not released) 
+- unclear how geography subtabulations will fare, what the disclosure avoidance implications are
+\item Firm-level characteristics go into a bit more detail, and require availability of SynLBD v3
+\item Time consistency of the series
+\item Comparison to alternative ``outside-the-firewall'' imputation mechanisms 
+(\cite{HolanEtAl2010,BradleyEtAl2014})
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Postulated alternative algorithm}
+%In part to address the possible time-inconsistencies we propose an 
+%alternative algorithm.  In order to minimize future seam issues, we remove establishments (or 
+%firms) that 
+%contribute to sensitive cells of tabulations with characteristics $k^\prime t$, for $t$ and the 
+%next 
+%$n$ periods. These establishments are replaced by  synthetic establishments that match on 
+%characteristics $k^\prime t$, and we simply replace the observed values in the database 
+%$x_{js}$ 
+%with the synthetic values $\tilde{x}_{js}$ (for all variables), for $s=t,\dots,t+n$.%
+%\footnote{We thus re-use the index $j$ for both observed and synthetic establishments.}
+%For convenience, denote by $J_{k^\prime t}^-$ the set of establishments for which observed 
+%values $x_{jt}$ do not contribute to any tabulations at time $t$.  In its simplest form, the 
+%algorithm can be expressed as
+\begin{block}{$BDS^{(ii)}$}
+\begin{algorithm}
+\begin{algorithmic}
+\State {Compute: $X_{k^\prime t} = \sum_{j \in K_t^\prime} x_{jt}$}
+\State{Compute: $I_{t}^X$}
+\If {$I_{t}^X = 0$ }
+    \State {Assign all $j \in K_t^\prime$ to $J_{k^\prime t}^-$ }
+    \State {Assign all $j \in J_{k^\prime s}^-$ to $J_{k^\prime t}^-$ for $t > s > t-n$}
+\EndIf
+\State { Compute: %
+$$X_{k^\prime t}^{(ii)} = 
+               \sum_{j \in \left \lbrace K_t^\prime \cap J_{k^\prime t}^- \right \rbrace }
+                               \tilde{x}_{jt} 
+	          +
+	          \sum_{j \in  K_t^\prime \wedge j \notin J_{k^\prime t}^-  }
+	                                         {x}_{jt} 
+$$}
+
+\end{algorithmic}
+\end{algorithm}
+
+For $n=\infty$, $J_{t}$ is an absorbing set, which seems undesirable. For $n=1$, this reduces  to 
+Algorithm~1.
+\end{block}
+\end{frame}
+
+
+
+
+\begin{frame}{Conclusion}
+\begin{block}{Early in the process}
+\begin{itemize}
+\item Desirable a-priori properties (use of public-use data to fill in blanks)
+\item May not work for other variables
+\item Assumes suppression as primary disclosure avoidance mechanism...
+\end{itemize}\end{block}
+\end{frame}
+
+% trick to stop counting slides
+\newcounter{finalframe}
+\setcounter{finalframe}{\value{framenumber}}
+% Backup frames
+\setcounter{framenumber}{\value{finalframe}}
+
+
+\begin{frame}
+Thank you
+\end{frame}
+
+
+\begin{frame}[fragile]
+
+\tiny\vspace{0.8\textheight}\vfill 
+\begin{verbatim}
+$Id: Presentation-subdoc.tex 1720 2015-09-25 14:29:12Z lv39 $
+\end{verbatim}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{center}
+More info: 
+\begin{itemize}
+\item For information on the SynLBD, see 
+\href{http://www2.vrdc.cornell.edu/news/data/lbd-synthetic-data/}{goo.gl/eyrv7w}
+\item Access through the Synthetic Data Server, 
+\href{http://www.vrdc.cornell.edu/sds/}{www.vrdc.cornell.edu/sds/} 
+\end{itemize}
+
+\end{center}
+\end{frame}
+
+%%% Local Variables:
+%%% mode: latex
+%%% End:

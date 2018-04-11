@@ -1,0 +1,19 @@
+
+main.tex
+BB1 This standard will be met when "sufficient information exists with which to understand, evaluate, and build upon a prior work if a third party can replicate the results without any additional information from the author."  (King, Gary. 1995. "Replication, Replication.," PS: _Political Science and Politics_, 28(3): 443-499.)
+
+discussion.tex
+BB2 The Royal Society in its June 2012 publication "Science as an Open Enterprise: Open Data for Open Science" has recently called for metadata that goes beyond basic, generic contextual information and meets four fundamental characteristics.  Metadata must be:  accessible (a researcher can easily find it); intelligible (to various audiences); assessable (are researchers able make judgments about or assess the quality of the data); and usable (at miniumum, by other scientists).  (Note sure how to cite this, see:  http://royalsociety.org/uploadedFiles/Royal_Society_Content/policy/projects/sape/2012-06-20-SAOE.pdf)
+
+discussion.tex
+BB3:  I think you could cite two articles here:
+
+Blank, Grant, and Karsten Rasmussen (2004):  The Data Documentation Initiative:  The Value and Significance of a Worldwide Standard."  _Social Science Computer Review_ 22:  307-318.  http://ssc.sagepub.com/cgi/content/abstract/22/3/307 (accessed 3 July 2012).
+
+Gregory, Arofan and Pascal Heus. "DDI and SDMX: Complementary, Not Competing, Standards", Open Data Foundation Paper, July 2007. http://www.opendatafoundation.org/papers/DDI_and_SDMX.pdf (access 3 July 2012).
+
+
+
+
+
+  

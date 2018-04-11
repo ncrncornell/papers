@@ -1,0 +1,35 @@
+% $Id: item-suppression.tex 1720 2015-09-25 14:29:12Z lv39 $ 
+% $URL: https://forge.cornell.edu/svn/repos/ncrn-cornell/branches/papers/PSD2014/text/item-suppression.tex $
+
+BDS processing uses primary and secondary suppressions, derived from a \emph{P} percent rule, as disclosure avoidance mechanism. All cells of a potential publication table are analyzed to make sure no identifying information about a particular business, household, or individual  is released to the public. In the case of the BDS, cells where the top 2 firms account for more than \emph{P} percent of the total value of the cell are flagged for suppression. The precise \emph{P} value is not disclosed to minimize the possibility of reidentification by potential attackers. Secondary suppressions are identified so as to minimize the amount of information loss in a given table row or column. To this end, the search algorithm looks for candidate cells that contain the least amount of employment, and suppresses their content. Protecting these secondary cells might require a third round of supressions given the presence of column totals in the tables.
+Once the tables are analyzed and the necessary cells suppressed, each table row that contains a suppressions is flagged, and the modified table released to the public. Note that individual suppressed cells are not separately flagged, only the row that contains at least one suppressed cell.  A necessary feature of this disclosure mechanism is that a large number of  secondary suppressions  are necessitated by the need to protect the cell that is the primary disclosing cell. The public-use data, of course, doesn't allow the identification of which suppressions are primary or secondary suppressions.
+
+
+Table~\ref{tab:bds_e} describes the extent to which suppressions occur in the  published 
+establishment-level \ac{BDS}, as available at 
+\url{http://www.census.gov/ces/dataproducts/bds/data_estab.html} (Table~\ref{tab:bds_f} in 
+the appendix also describes the similar pattern in firm-level statistics). The number of cells in 
+each table is indicated, as are the percent of cells with  suppression of some variable ({\tt 
+d\_flag=1}),  and the percent of cells where ``Job Creation by Entrants'' is suppressed. Other 
+variables, also present on the establishment-level \ac{BDS}, are never suppressed. 
+
+
+%\csvautotabular{programs/bds_e_suppressions_multi.csv}
+\begin{table}
+\caption{Suppressions in establishment-level BDS\label{tab:bds_e}}
+\centering
+\begin{tabular}{|lc|r|rr|}\hline%
+               &                 &\bfseries Number &\multicolumn{2}{c|}{\bfseries Suppressions (\%)}\\
+\cline{4-5}
+\bfseries Type & \bfseries Level &\bfseries of     &                            & \bfseries Job creation\\
+                            &                              &\bfseries  cells& \bfseries Any  &\bfseries by entrants\\
+\hline
+\csvreader[head to column names,late after line=\\,late after last line=\\\hline]%
+{programs/bds_e_suppressions_multi.csv}{}%
+{\typename & \level & \cells & \percentsup  & \jcbirths}%
+\multicolumn{5}{p{0.6\textwidth}}{\footnotesize Note: Cells are year $x$ categories, where the 
+number of categories varies by published table.}
+\end{tabular}
+\end{table}
+
+Clearly, while the usefulness of the data to users would seem to increase for more detailed cross-tabulations, that same detail, under current disclosure avoidance rules, leads to increased suppression, and thus less effective data utility. Suppression is worse for some variables than for others. Establishment and firm counts are never supressed following County Business Patterns and Disclosure Review Board rules. By contrast employment, job creation and destruction are suppressed. 

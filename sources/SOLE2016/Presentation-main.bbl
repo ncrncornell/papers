@@ -1,0 +1,76 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Abowd and Schmutte(2015)]{AbowdSchmutte_BPEA2015}
+J.~M. Abowd and I.~Schmutte.
+\newblock Economic analysis and statistical disclosure limitation.
+\newblock \emph{Brookings Papers on Economic Activity}, Fall 2015, 2015.
+\newblock ISSN 00072303.
+\newblock URL
+  \url{http://www.brookings.edu/about/projects/bpea/papers/2015/economic-analysis-statistical-disclosure-limitation}.
+
+\bibitem[Benedetto et~al.(2013)Benedetto, Stinson, and
+  Abowd]{Benedettoetal_2013}
+G.~Benedetto, M.~Stinson, and J.~M. Abowd.
+\newblock The creation and use of the sipp synthetic beta.
+\newblock Technical report, US Census Bureau, 2013.
+\newblock URL
+  \url{http://www.census.gov/content/dam/Census/programs-surveys/sipp/methodology/SSBdescribe_nontechnical.pdf}.
+
+\bibitem[Bertrand et~al.(2015)Bertrand, Kamenica, and Pan]{Bertrand29012015}
+M.~Bertrand, E.~Kamenica, and J.~Pan.
+\newblock Gender identity and relative income within households.
+\newblock \emph{The Quarterly Journal of Economics}, 130\penalty0 (2), 2015.
+\newblock \doi{10.1093/qje/qjv001}.
+\newblock URL
+  \url{http://qje.oxfordjournals.org/content/early/2015/04/11/qje.qjv001.abstract}.
+
+\bibitem[Drechsler and Vilhuber(2014)]{SJIAOS-2014b}
+J.~Drechsler and L.~Vilhuber.
+\newblock {A First Step Towards A {German} {SynLBD}: {C}onstructing A {G}erman
+  {L}ongitudinal {B}usiness {D}atabase}.
+\newblock \emph{Statistical Journal of the IAOS: Journal of the International
+  Association for Official Statistics}, 30\penalty0 (2), 2014.
+\newblock \doi{10.3233/SJI-140812}.
+\newblock URL
+  \url{http://content.iospress.com/articles/statistical-journal-of-the-iaos/sji00812}.
+
+\bibitem[Karr et~al.(2006)Karr, Kohnen, Oganian, Reiter, and Sanil]{tas2006}
+A.~F. Karr, C.~N. Kohnen, A.~Oganian, J.~P. Reiter, and A.~P. Sanil.
+\newblock A framework for evaluating the utility of data altered to protect
+  confidentiality.
+\newblock \emph{The American Statistician}, 60\penalty0 (3):\penalty0 1--9,
+  2006.
+\newblock \doi{10.1198/000313006X124640}.
+
+\bibitem[Kinney et~al.(2011)Kinney, Reiter, Reznek, Miranda, Jarmin, and
+  Abowd]{KinneyEtAl2011}
+S.~K. Kinney, J.~P. Reiter, A.~P. Reznek, J.~Miranda, R.~S. Jarmin, and J.~M.
+  Abowd.
+\newblock Towards unrestricted public use business microdata: The synthetic
+  longitudinal business database.
+\newblock \emph{International Statistical Review}, 79\penalty0 (3):\penalty0
+  362--384, 2011.
+\newblock ISSN 1751-5823.
+\newblock \doi{10.1111/j.1751-5823.2011.00153.x}.
+\newblock URL \url{http://dx.doi.org/10.1111/j.1751-5823.2011.00153.x}.
+
+\bibitem[Miranda and Jarmin(2002)]{MirandaJarmin2002}
+J.~Miranda and R.~Jarmin.
+\newblock The {Longitudinal} {Business} {Database}.
+\newblock Discussion Paper CES-WP-02-17, U.S. Census Bureau, Center for
+  Economic Studies, 2002.
+\newblock URL \url{http://ideas.repec.org/p/cen/wpaper/02-17.html}.
+
+\bibitem[Nowok et~al.(2016)Nowok, Raab, Snoke, and Dibben]{synthpop}
+B.~Nowok, G.~M. Raab, J.~Snoke, and C.~Dibben.
+\newblock \emph{synthpop: Generating Synthetic Versions of Sensitive Microdata
+  for Statistical Disclosure Control}, 2016.
+\newblock URL \url{https://CRAN.R-project.org/package=synthpop}.
+\newblock R package version 1.2-1.
+
+\end{thebibliography}

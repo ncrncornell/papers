@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/TeX Live for SUSE Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: synbds-noise-synthetic.aux
+The style file: splncs03.bst
+A level-1 auxiliary file: appendix.aux
+Database file #1: abbrev.bib
+Database file #2: paper.bib
+Warning--entry type for "AbowdVilhuber2010" isn't style-file defined
+--line 30 of file paper.bib
+Warning--entry type for "BDS2" isn't style-file defined
+--line 489 of file paper.bib
+Warning--entry type for "Rodriguez2007" isn't style-file defined
+--line 536 of file paper.bib
+Database file #3: theses.bib
+Database file #4: common-bib-ces-wp.bib
+Repeated entry---line 63 of file common-bib-ces-wp.bib
+ : @techreport{SynLBD20
+ :                     ,
+I'm skipping whatever remains of this entry
+Warning--empty journal in tas2006
+You've used 19 entries,
+            2785 wiz_defined-function locations,
+            774 strings with 9730 characters,
+and the built_in function-call counts, 9464 in all, are:
+= -- 749
+> -- 298
+< -- 17
++ -- 124
+- -- 104
+* -- 637
+:= -- 1247
+add.period$ -- 15
+call.type$ -- 19
+change.case$ -- 112
+chr.to.int$ -- 0
+cite$ -- 20
+duplicate$ -- 884
+empty$ -- 823
+format.name$ -- 118
+if$ -- 1998
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 180
+newline$ -- 62
+num.names$ -- 38
+pop$ -- 313
+preamble$ -- 1
+purify$ -- 90
+quote$ -- 0
+skip$ -- 210
+stack$ -- 0
+substring$ -- 516
+swap$ -- 490
+text.length$ -- 17
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 76
+warning$ -- 1
+while$ -- 69
+width$ -- 21
+write$ -- 196
+(There was 1 error message)

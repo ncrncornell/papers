@@ -1,0 +1,137 @@
+%%%% $Id: abowd-vilhuber-block-PSD-2012.tex 396 2013-11-03 22:29:27Z lv39 $
+%%%% $URL: https://forge.cornell.edu/svn/repos/ncrn-cornell/branches/papers/PSD2012/abowd-vilhuber-block-PSD-2012.tex $
+%\documentclass[12pt, conference, compsocconf,onecolumn]{IEEEtran}
+%\documentclass[12pt, journal,onecolumn]{IEEEtran}
+\documentclass{llncs}
+%\IEEEoverridecommandlockouts
+% override added by Abowd so that grants could be acknowledged
+% Add the compsocconf option for Computer Society conferences.
+%
+
+% *** CITATION PACKAGES ***
+\usepackage{graphicx}
+%\usepackage{natbib}
+\usepackage[breaklinks]{hyperref}
+\usepackage[printonlyused]{acronym}
+\usepackage[usenames]{xcolor}
+\usepackage{longtable}
+\definecolor{darkblue}{rgb}{0.2,0,0.4}
+\definecolor{darkred}{rgb}{0.54,0,0}
+\definecolor{light-gray}{gray}{0.95}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black}
+%\includeonly{acronyms.tex}
+% when preparing the file, also add acronyms.tex to the above list.
+% For the final version, this can then be removed.
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+\usepackage[]{bm}
+\usepackage{amssymb,latexsym}
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+
+% *** ALIGNMENT PACKAGES ***
+%
+\usepackage{array}
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% embed files. This can be removed by the editor without loss of functionality
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{ifpdf}
+\ifpdf 
+\usepackage{embedfile}
+\embedfile{\jobname.tex}
+\embedfile{paper.bib}
+\embedfile{abstract.tex}
+\embedfile{introduction.tex}
+\embedfile{main.tex}
+\embedfile{discussion.tex}
+\embedfile{conclusion.tex}
+\embedfile{acronyms.tex}
+\embedfile{pie-chart-rdc-data.png}
+\embedfile{accesschart.png}
+\embedfile{ConfidentialMetadata.png}
+\embedfile{abowd-vilhuber-block-PSD-2012.bbl}
+\embedfile{abowd-vilhuber-block-PSD-2012.aux}
+\embedfile{llncs.cls}
+\embedfile{aliascnt.sty}
+\fi
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{A Proposed Solution to the Archiving and Curation of Confidential Scientific Inputs}
+
+% FOR PAPERS, USE THIS VERSION
+\author{John~M.~Abowd\inst{1}%
+\thanks{Corresponding author: \email{john.abowd@cornell.edu}}%
+\and Lars~Vilhuber\inst{1}%
+\and William~Block\inst{2}%
+}
+
+\institute{Department of Economics and Labor Dynamics Institute, Cornell University, Ithaca, NY, %
+ USA \and Cornell Institute for Social and Economic Research, Cornell University, Ithaca, NY, USA}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% make the title area
+\maketitle
+
+\begin{abstract}
+\input{abstract}
+
+\end{abstract}
+
+
+%\input{abstract.tex}
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+%\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+% no \IEEEPARstart
+
+\input{introduction.tex}
+
+\section{Statement of the Problem}
+
+\input{main.tex}
+
+\section{Principles for Solution}
+
+\input{discussion.tex}
+
+\section{Conclusion}
+
+\input{conclusion.tex}
+
+% use section* for acknowledgement
+\section*{Acknowledgment}
+
+We acknowledge NSF grants SES 9978093, ITR 0427889, SES 0922005, SES 1042181, and SES 1131348.
+
+\bibliography{abbrev,paper}
+%\bibliographystyle{IEEEtranS}
+\bibliographystyle{splncs_srt}
+
+\section*{Acronyms used}
+
+\input{acronyms.tex}
+\begin{verbatim}
+$Date: 2013-11-03 17:29:27 -0500 (Sun, 03 Nov 2013) $ 
+$Rev: 396 $ 
+$Author: lv39 $
+\end{verbatim}
+{\footnotesize
+This document contains its component \LaTeX \ files embedded/attached.}
+\end{document}

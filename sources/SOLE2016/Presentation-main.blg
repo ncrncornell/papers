@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/TeX Live for opensuse.org)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Presentation-main.aux
+A level-1 auxiliary file: Presentation-subdoc.aux
+A level-1 auxiliary file: Presentation-appendix.aux
+The style file: abbrvnat.bst
+Database file #1: ../sds-bib/SDS_1042181.bib.bib
+Database file #2: ../sds-bib/synlbd-data.bib.bib
+Database file #3: ../sds-bib/synlbd-documents.bib.bib
+Repeated entry---line 35 of file ../sds-bib/synlbd-documents.bib.bib
+ : @article{KinneyEtAl2011
+ :                        ,
+I'm skipping whatever remains of this entry
+Database file #4: ../sds-bib/ssb-data.bib.bib
+Database file #5: ../sds-bib/ssb-documents.bib.bib
+Database file #6: ../sds-bib/wsc2013.bib.bib
+Database file #7: ../sds-bib/grants.bib.bib
+Database file #8: ../paper.bib.bib
+You've used 8 entries,
+            2773 wiz_defined-function locations,
+            670 strings with 7105 characters,
+and the built_in function-call counts, 3769 in all, are:
+= -- 344
+> -- 267
+< -- 4
++ -- 89
+- -- 81
+* -- 333
+:= -- 628
+add.period$ -- 37
+call.type$ -- 8
+change.case$ -- 51
+chr.to.int$ -- 8
+cite$ -- 16
+duplicate$ -- 150
+empty$ -- 245
+format.name$ -- 95
+if$ -- 759
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 5
+newline$ -- 61
+num.names$ -- 32
+pop$ -- 71
+preamble$ -- 1
+purify$ -- 43
+quote$ -- 0
+skip$ -- 129
+stack$ -- 0
+substring$ -- 50
+swap$ -- 8
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 88
+warning$ -- 0
+while$ -- 27
+width$ -- 0
+write$ -- 136
+(There was 1 error message)

@@ -1,0 +1,208 @@
+%==================== DO NOT EDIT WITH SCIWORD ====================
+%++++++++++++++++++++ do not modify these lines++++++++++++++++++ +
+% +
+% +
+% +
+% +
+% +
+% \usepackage{epsfig}
+% \usepackage{float}
+% \usepackage{harvard}
+%\usepackage{doublespace}
+%\usepackage{newcent}
+%\usepackage{draftcopy}
+%-------------------- Start of title info -------------------------
+% Use these definitions, since they are also used in headers, PDF info,
+% etc. 
+%\newcommand{\myversion}{January 22 2002}
+%\papernumber{2002-02}
+%alternate version
+
+
+\documentclass[titlepage,pdftex,10pt,letterpaper]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fullpage}
+\usepackage{float}
+\usepackage{makeidx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{rotating}
+\usepackage{varioref}
+\usepackage{pstricks}
+\usepackage{bookman}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=4.00.0.2321}
+%TCIDATA{Created=Friday, March 15, 2002 20:29:03}
+%TCIDATA{LastRevised=Thursday, August 22, 2002 11:59:02}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\ifx\pdfoutput\undefined                                        
+\else                                                           
+\fi                                                             
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+\input{formats}
+\newcommand{\mytitle}{The sensitivity of  job flow statistics to identity coding errors}
+\newcommand{\myauthors}{John M. Abowd and Lars Vilhuber}
+\newcommand{\myversion}{\today}
+\begin{document}
+
+\title{The sensitivity of job flow statistics to identity coding errors}
+\author{John M. Abowd and Lars Vilhuber}
+\date{\today}
+\maketitle
+
+
+\begin{abstract}
+%TCIMACRO{\QSubDoc{Include abstract}{\input{abstract.tex}}}%
+%BeginExpansion
+\input{abstract.tex}%
+%EndExpansion
+\end{abstract}
+
+\section{Introduction}
+%\doublespace
+
+%TCIMACRO{\QSubDoc{Include intro}{\input{intro.tex}}}%
+%BeginExpansion
+\input{intro.tex}%
+%EndExpansion
+
+\section{Data and problem description}
+\label{sec:data}
+%TCIMACRO{\QSubDoc{Include data}{\input{data.tex}}}%
+%BeginExpansion
+\input{data.tex}% done
+%EndExpansion
+
+\section{Matching process}
+\label{sec:matching}
+
+\subsection{Concepts}
+\label{sec:matching-concepts}
+
+%TCIMACRO{\QSubDoc{Include matching-concept}{\input{matching-concept.tex}}}%
+%BeginExpansion
+\input{matching-concept.tex}%
+%EndExpansion
+
+
+\subsection{Matching earnings records}
+\label{sec:matching-records}
+
+%TCIMACRO{\QSubDoc{Include matching-application}{\input{matching-application.tex}}}%
+%BeginExpansion
+\input{matching-application.tex}%
+%EndExpansion
+
+
+\subsection{Implementation}
+\label{sec:implemented-algorithm}
+
+%TCIMACRO{\QSubDoc{Include matching-algorithms}{\input{matching-algorithms.tex}}}%
+%BeginExpansion
+\input{matching-algorithms.tex}%
+%EndExpansion
+
+\subsection{Results}
+\label{sec:matching-results}
+
+%TCIMACRO{\QSubDoc{Include matching-results}{\input{matching-results.tex}}}%
+%BeginExpansion
+\input{matching-results.tex}%
+%EndExpansion
+
+\section{Impact on economic estimates}
+\label{sec:impact}
+%TCIMACRO{\QSubDoc{Include impact}{\input{impact.tex}}}%
+%BeginExpansion
+\input{impact.tex}%
+%EndExpansion
+
+\section{Conclusion}
+\label{sec:conclusion}
+%TCIMACRO{\QSubDoc{Include conclusion}{\input{conclusion.tex}}}%
+%BeginExpansion
+\input{conclusion.tex}%
+%EndExpansion
+
+
+\section*{Acknowledgement}
+
+%TCIMACRO{\QSubDoc{Include acknowledgement}{\input{acknowledgement.tex}}}%
+%BeginExpansion
+\input{acknowledgement.tex}%
+%EndExpansion
+  
+
+\newpage
+
+\clearpage
+\appendix
+
+\singlespace
+  
+%\section{Tables}
+
+%TCIMACRO{\QSubDoc{Include figures}{\input{figures.tex}}}%
+%BeginExpansion
+%\input{appendix-tables.tex}%
+%EndExpansion
+%\clearpage
+
+
+\section{Description of matching algorithms}
+\label{sec:app:matching}
+%TCIMACRO{\QSubDoc{Include appendix-data}{\input{appendix-data.tex}}}%
+%BeginExpansion
+\input{appendix-data.tex}%
+%EndExpansion
+
+\newpage
+\section{Definition of statistics}
+\label{sec:app:definition-technical}
+%TCIMACRO{\QSubDoc{Include appendix-definition-technical}{\input{appendix-definition-technical.tex}}}%
+%BeginExpansion
+\input{appendix-definition-technical.tex}%
+%EndExpansion
+
+
+\bibliographystyle{dcu}
+\bibliography{bib/abbrev,bib/census,bib/travail,bib/lehdtp,bib/admindata}
+
+\section{Tables}
+
+%TCIMACRO{\QSubDoc{Include tables}{\input{tables.tex}}}%
+%BeginExpansion
+\input{tables.tex}%
+%EndExpansion
+\clearpage
+
+\end{document}

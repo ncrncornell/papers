@@ -1,0 +1,9 @@
+\beamer@endinputifotherversion {3.26pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Setting the stage}{4}{1}{1}
+\beamer@sectionintoc {2}{Contributions}{22}{1}{2}
+\beamer@subsectionintoc {2}{1}{Learning about synthetic data}{23}{1}{2}
+\beamer@subsectionintoc {2}{2}{Encouraging use of synthetic data}{48}{1}{2}
+\beamer@subsectionintoc {2}{3}{Facilitating validation}{61}{1}{2}
+\beamer@subsectionintoc {2}{4}{International expansion}{88}{1}{2}
+\beamer@sectionintoc {3}{Conclusion}{99}{1}{3}

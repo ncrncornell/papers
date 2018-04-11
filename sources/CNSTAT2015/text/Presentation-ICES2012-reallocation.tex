@@ -1,0 +1,142 @@
+% Time-stamp: <09/10/02 01:57:13 vilhuber>
+% $Id: Presentation-ICES2012-reallocation.tex 1122 2012-06-08 11:53:10Z vilhu001 $
+
+% normal line:
+\documentclass[xcolor=table,compress]{beamer}
+% to create notes:
+%\documentclass[handout,notes=only]{beamer}
+% to create handouts
+%\documentclass[xcolor=table,handout,compress]{beamer}
+% to create a different kind of handouts
+%\documentclass{article}
+%\usepackage[envcountsect]{beamerarticle}
+
+%\setbeameroption{handout}
+%\setbeameroption{show notes}
+
+
+%
+% Packages
+%
+\mode<article> % only for the article version
+{
+  \usepackage{fullpage}
+  \usepackage{hyperref}
+}
+\usepackage{ifpdf}
+\ifpdf 
+\usepackage{embedfile}
+\embedfile{\jobname.tex}
+\fi
+
+\usepackage{graphicx}
+%\usepackage{pstricks}
+\usepackage{pifont}
+\usepackage{chicago} 
+\newcommand{\citet}{\citeN}
+\usepackage{pgf}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[latin1]{inputenc}
+\usepackage{colortbl}
+\usepackage[english]{babel}
+\usepackage{calc}
+%\usepackage{lmodern}
+%\usepackage[T1]{fontenc} 
+
+\usepackage{times}
+%\usepackage{colortbl}
+
+%============================================================
+% Beamer specific styles and configs
+%============================================================
+
+\mode<presentation>
+{
+% alternative, could always use
+%\usetheme{Census}
+\usetheme{Cornell}
+\useoutertheme{Cornell}
+}
+
+
+%\setbeamercovered{dynamic}
+
+
+%============================================================
+% Title
+%============================================================
+
+\title[Synthetic reallocation]%
+{The contribution of labor reallocation to aggregate productivity growth: a synthetic data approach}
+\author[Vilhuber]{%
+  Lars~Vilhuber\inst{1,2} }
+\institute[Cornell]{
+  \inst{1}%
+  \includegraphics[height=10pt]{cu_logo_only}
+    Labor Dynamics Institute, 
+   ILR, 
+  Cornell University
+  \and
+  \inst{2}%
+  Center for Economic Studies/LEHD, %\includegraphics[height=7pt]{census-wordmark-transparent}
+  U.S. Census Bureau
+}
+\date[ICES2012]{ICES 2012,  Montr\'eal}
+\subject{Labor productivity, Canada, USA, Synthetic data, LBD}
+
+%
+% Some useful commands
+%
+
+\newcommand{\rarrow}{\selectfont\ding{220}}
+\newcommand{\skiplink}{\tiny{\gray\selectfont\ding{59}}}
+\newcommand{\goback}{\Acrobatmenu{GoBack}{\gray\selectfont\ding{242}}}
+\newcommand{\x}{\selectfont\ding{52}}
+\newcommand{\verbatimsize}{\tiny}
+\newcommand{\tablesize}{\footnotesize}
+
+\newenvironment{slide}{\begin{frame}}{\end{frame}}
+%
+% The document proper
+%
+\begin{document}
+
+\frame{\titlepage}
+
+%\part<presentation>*{Outline}
+%
+%\begin{frame}
+%  \frametitle{Outline}
+%  \tableofcontents[part=1,pausesections]
+%\end{frame}
+
+% This puts the partial table of contents at the start of each subsection
+%\AtBeginSubsection[]
+%{
+%  \begin{frame}<beamer>
+%    \frametitle{Outline}
+%    \tableofcontents[current,currentsubsection]
+%  \end{frame}
+%}
+
+\part<presentation>{Main Talk}
+
+%
+%  From this point on, we should probably extract it to a sub-document
+%
+
+\include{Presentation-ICES2012-reallocation-subdoc}
+\ifpdf
+\embedfile{\jobname-subdoc.tex}
+\fi
+
+\part<presentation>{Appendix}
+
+\include{Presentation-ICES2012-reallocation-appendix}
+\ifpdf
+\embedfile{\jobname-appendix.tex}
+\fi
+
+\end{document}
+
+

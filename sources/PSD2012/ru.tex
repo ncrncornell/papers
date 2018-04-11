@@ -1,0 +1,200 @@
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{LaTeXparent=0,0,abowd-vilhuber-PSD-2012.tex}
+                      
+
+% $Id: ru.tex 396 2013-11-03 22:29:27Z lv39 $ 
+% $URL: https://forge.cornell.edu/svn/repos/ncrn-cornell/branches/papers/PSD2012/ru.tex $                      
+
+
+\subsection{Linear Mixed Models}
+
+We produced $R-U$ (Risk-Utility) curves or $R-U$ confidentiality maps that
+examine the trade-off between $\epsilon $ (disclosure risk) and correlations
+(data utility) by changing parameter values in our procedure. Duncan \cite%
+{duncan} states that \textquotedblleft in its most basic form, an $R-U$
+confidentiality map is the set of paired values $(R,U)$ of disclosure risk
+and data utility that correspond to various strategies for data
+release.\textquotedblright\ In our models, $\epsilon $ changes to generate
+the $R-U$ curve and lower values of $\epsilon $ correspond to lower levels
+of risk and higher levels of privacy. As $\epsilon $ decreases, the privacy
+of our released data increases as defined by $\epsilon $-differential
+privacy. Low disclosure risk has good differential privacy, which says that
+\textquotedblleft any possible outcome of an analysis should be
+\textquotedblleft almost\textquotedblright\ equally likely, independent of
+whether any individuals opts into or opts out of the data
+set\textquotedblright\ \cite{dwork}. In addition, since the Laplace scale
+parameter is $\frac{\Lambda }{k\epsilon }$, the random noise added to
+release $\epsilon $-differentially private data increases as $\epsilon $
+decreases ($k$ increases at a slower rate than $\epsilon $ decreases). This
+means that the released data or estimates are more noisy for lower values of 
+$\epsilon $. Consequently, data utility should be lower for released data
+with more noise added. We examined the exact trade-off between disclosure
+risk, $\epsilon $, and data utility, correlation $(\hat{y}^{DP_{\epsilon }}$,%
+$y)$.
+
+\subsubsection{$R-U$ Curve for Linear Mixed Models}
+
+{For all values of $\epsilon $, calculate the predicted rates: 
+\begin{equation*}
+JCR^{DP}=\hat{y}^{DP_{\epsilon }}=X\hat{\beta}^{DP_{.51\epsilon }}+Z\hat{u}%
+^{DP_{.49\epsilon }} 
+\end{equation*}%
+For $k=1$ or all of the data, calculate the predicted rates: 
+\begin{equation*}
+JCR^{global}=\hat{y}^{global}=X\hat{\beta}^{global}+Z\hat{u}^{global} 
+\end{equation*}%
+Calculate the correlations between $y$ and $\hat{y}^{global}$, $\hat{y}%
+^{DP_{\epsilon }}.$ Finally, plot the correlations as a function of $%
+\epsilon $.}
+
+\subsubsection{$R-U$ Curve for Linear Models}
+
+{For all values of $\epsilon $, calculate the predicted rates: 
+\begin{equation*}
+JCR^{DP_{\epsilon }}=\hat{y}^{DP_{\epsilon }}=X\hat{\beta}^{DP_{\epsilon }} 
+\end{equation*}%
+For $k=1$ or all of the data, calculate the predicted rates: 
+\begin{equation*}
+JCR^{global}=\hat{y}^{global}=X\hat{\beta}^{global} 
+\end{equation*}%
+Calculate the correlations between $y$ and $\hat{y}^{global}$, $\hat{y}%
+^{DP_{\epsilon }}$. Finally, plot the correlations as a function of $%
+\epsilon $. \ The LM only estimated industry means and did not include a
+time trend.}
+
+Figures \ref{Fi:ru1} and \ref{Fi:ru2} show the R-U Curves for the LMMs and
+LMs, respectively. Correlations decreased as $\epsilon $ decreased, and all
+correlations of $\hat{y}^{DP_{\epsilon }}$ with $y$ were lower than the
+global \textquotedblleft best fit\textquotedblright\ correlation when $k=1$
+(which would correspond to non-differentially private $\epsilon >25$). Since
+all correlations including the one between $y$ and $\hat{y}^{global}$ were
+less than 0.40, the model did not fit the data well. This illustrates the
+principle limitation of the differentially private estimator -- more random
+effects were required to get a good fit, detailed industry and time effects
+in particular, but such models were only feasible when $\epsilon >25,$ which
+is no protection at all. But for models with approximately 3,000 effects,
+degradation in correlation over decreased values of $\epsilon $ was only
+slightly noticeable. Non-monotonicity was observed when most of the noise
+was added to $\beta $ versus $u$ since there were only 21 random Laplace
+draws.
+
+\subsubsection{R-U Curve for Linear Mixed Models with Allocated Privacy}
+
+Additionally, we considered having proportionally different levels of
+privacy for $\beta $ and $u$ within the total privacy budget of $\epsilon $.
+Since there were many more estimates of $u$ (3,161) as compared to industry $%
+\beta $ (20), it may be reasonable to protect the estimates of $u$ with more
+privacy (lower $\epsilon $). Figures \ref{Fi:ru3} and \ref{Fi:ru4} show $u$
+having 10\% and 88\% of the plotted value of $\epsilon $, respectively,
+while $\beta $ accounts for the remainder. For example, in Figure \ref%
+{Fi:ru3}, the five budgets of $\epsilon $ used for $u$ were $%
+0.46,0.4,0.3,0.2,$ and $0.1$ while the budgets used for $\beta $ were $%
+4.05,3.52,2.64,1.76,$ and $0.88$. \ Figures \ref{Fi:ru5} and \ref{Fi:ru6}
+show $u$ having 1\% and 97\% of the plotted privacy value of $\epsilon $,
+respectively. Noticeable degradation is seen in Figure \ref{Fi:ru5} when $u$
+is highly protected. \ For all figures except Figure \ref{Fi:ru2}, the
+privacy budget of the time trend was kept at 2\%.
+
+\subsubsection{An Improved LMM and Influential Observations}
+
+We also examined the effects of deleting all of a county's $U$ observations
+on the estimates of variance components and fixed effects with a LMM\ that
+included four parameters for lagged quarterly rates. The base fit of the
+model improved significantly to a correlation of 49.67\% as compared to just
+under 35\% for the LMM\ including only a simple time trend. The goal was
+also to bound the possible leave-1-out changes of our REML\ estimates, $\hat{%
+\beta},\hat{\sigma}_{\xi }^{2},$and $\hat{\sigma}_{uc}^{2}$ for closer
+inspection for both the LMM\ and BLMM. We performed over three thousand
+leave-U-out simulations for each county. For each simulation, the process is
+as follows:
+
+\begin{itemize}
+\item Define $D^{\symbol{126}U}\equiv (y^{\symbol{126}U},X^{\symbol{126}%
+U},Z^{\symbol{126}U})$, differing by one county-industry combination (U-out);
+
+\item Fit REML\ estimates and analyze changes in $\hat{\beta},\hat{\sigma}%
+_{\xi }^{2},$and $\hat{\sigma}_{uc}^{2}.$
+\end{itemize}
+
+Results for the leave U-out fixed effects indicate that all industry
+estimates are within 0.0002 of each other except for public administration,
+which has a range of 0.003. The covariates for the lagged quarterly rates
+were all within 0.001 of each other. The 0.1 and 99.9 percent quantiles for
+the variance components are described in Table \ref{Ta:varcomp}.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Variance Component & MLE & 0.1\% quantile & 99.9\% quantile \\ \hline
+$\hat{\sigma}_{\xi }^{2}$ & 0.01045409 & 0.01043703 & 0.01046005 \\ \hline
+$\hat{\sigma}_{uc}^{2}$ & 0.00016302 & 0.00015722 & 0.00016330 \\ \hline
+\end{tabular}%
+\end{center}
+\caption{Variance Estimate Ranges from Leaving out One County}
+\label{Ta:varcomp}
+\end{table}
+
+Results from the analysis of deleting influential observations from Section
+V indicate that all updated estimates of fixed effects and variance
+components are well within the bounds of the leave U-out changes. The county
+EBLUPs that were most affected by the removal of influential observations
+were always the particular counties that these observations were in. The
+maximum change for the EBLUPs was 0.007828 (observation from county 3047)
+and the industry fixed effects was 0.00008281 (observation from county 661).
+Both of these observations came from observations with large $\hat{u}$'s and
+large absolute values of $r_{i}^{p}$. If we were to match these maximum
+changes correspond to four times the standard deviation of a Laplace random
+variable, they produce Laplace scale parameters of 0.0015 and 0.000016,
+respectively. To put things in perspective, the laplace scale parameter for
+the estimated fixed effects and EBLUPs in the sub-sample and aggregate
+approach when $\epsilon $ was unity was approximately 0.0002 and was $%
+\epsilon $ was 3 was approximately 0.00012. With no sub-sampling and the
+removal of an influential observation, the laplace noise would only protect
+the fixed effects. \ Results for the BLMM\ focus on the county random
+effects.
+
+\subsection{Bayesian Linear Mixed Models}
+
+We analyzed the implications of the removal of influential observations on
+the $\epsilon $-differential privacy of our county random effects according
+to Section V-B.2. Predictably, in those models deleting observations from
+small counties (3047 and 661) produced the largest proportional bin changes
+across all models. Each model had 62,220 bins corresponding to 20 bins for
+each of the 3,111 county random effects. The model deleting an observation
+from county 3047 had as few as 21 posterior samples in its smallest bin
+(3,217 in its largest) and the model deleting an observation from county 661
+had 3,458 posterior samples in its largest bin (26 in its smallest). Both of
+these unusual counts occurred in the county effect from which the
+influential observation was deleted. Comparing these results to the
+benchmark model with 500 observations in each bin and using the methodology
+developed in Section V-B.2, this corresponds to an overall $\epsilon $ of
+3.2.
+
+We compared these results to random noise which is represented by the
+replicated benchmark model that was fit to monitor convergence in Section
+V-B.3. The bin boundaries were fixed at the five percent quantiles from the
+complete-data estimation. Hence, the expected count in each bin is 500. The
+replicated model using the complete data had its smallest bin containing 382
+posterior samples and its largest bin containing 641 posterior samples. This
+corresponds to an overall $\epsilon $ of 0.27, which is illustrated in the
+histogram of the bin counts shown in Figure \ref{Fi:histogram} where the
+mode is 500, the distribution is symmetrical, and the minimum and maximum on
+the horizontal axis define the inputs to computing $\epsilon $. Since no
+rows have been excluded from this experiment, the interpretation of $%
+\epsilon $ is the deviation in the empirical differential privacy that
+results from the imprecision of using 10,000 posterior samples.
+
+The 32 models with deleted influential observations always had maximum and
+minimum bin counts between the extremes of the replicated benchmark model
+and the models with deleted observations from county 3047 or county 661.
+That is, the extreme values used to estimate $\epsilon $ empirically came
+from the values computed when influential observations were deleted from
+these one of these two counties. A histogram of the bin counts for the model
+deleting an influential observation from county 3047, which defined the
+overall $\epsilon $ of 3.2, is shown in Figure \ref{Fi:histogramcounty3047}.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: abowd-schneider-vilhuber-JPC-2012.tex
+%%% End:

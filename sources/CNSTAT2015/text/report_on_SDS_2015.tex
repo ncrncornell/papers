@@ -1,0 +1,175 @@
+% !TeX TXS-program:bibliography = txs:///bibtex
+%John M. Abowd and Lars Vilhuber
+% $Id: report_on_SDS_2015.tex 1537 2015-05-01 23:20:30Z lv39 $
+% $URL: https://forge.cornell.edu/svn/repos/ncrn-cornell/branches/papers/CNSTAT2015/text/report_on_SDS_2015.tex $
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,titlepage]{article}
+%TCIDATA{OutputFilter=Latex.dll}
+%------------ External info is stored in these files. Edit at your own risk ---
+%++++++++++++++++++++ Adjust this as necessary ++++++++++++++++++++
+%-------------------- Start of title info -------------------------
+% Use these definitions, since they are also used in headers, PDF info,
+% etc.
+
+\input{titleinfo}
+
+
+%--------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  %%
+
+\date{\myversion
+%\\ \vspace*{3em}{THIS VERSION PRELIMINARY AND INCOMPLETE: PLEASE DO NOT CITE}
+}
+%--------------------
+\input{formats}
+%--------------------
+%try to eliminate the stupid * for \thanks in titlepage
+\renewcommand\footnotemark{}
+%--------------------
+%----------------------
+%To insert un-numbered footnotes (as on the title page)
+%ref: http://en.wikibooks.org/wiki/LaTeX/Formatting#cite_note-csli_footnotes-0
+\makeatletter
+\def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% when ready, uncomment this line
+%\excludecomment{instructions,constraint}
+\excludecomment{instructions}
+
+\title{\mytitle}
+\author{\myauthorA \and \myauthorB}
+
+\usepackage{Sweave}
+\begin{document}
+\input{report_on_SDS_2015-concordance}
+\maketitle
+
+ 
+
+ 
+
+
+
+\section{History of the Synthetic Data Server}
+\input{history.tex}
+
+
+\section{Access to the server}
+\input{access.tex}
+
+%\section{Validation}
+%\input{validation.tex}
+
+\section{Datasets}
+\input{datasets.tex}
+
+\section{Usage and impact}
+After the Synthetic Data Server project was kicked off, account growth has been steady (see Figure~\ref{fig:accounts}).
+
+\begin{figure}
+\centering
+\caption{Account creation and salient events\label{fig:accounts}}
+\includegraphics{report_on_SDS_2015-accounts}
+\end{figure}
+
+
+\subsection{Feedback loop}
+Both of the current data providers have incorporated feedback from users into their data products. The \ac{SSB} with which the \ac{SDS} was launched was itself the second public iteration, after the original release of v4.0. The growth of the supporting IT infrastructure, first from its predecessor to the original instantiation of the \ac{SDS}, and subsequently in the 2014 IT upgrade mentioned earlier, reflected the growing interest that followed adaptations. In the case of the \ac{SSB}, such feedback first lead to the incorporation of additional variables in v5.1 \citep{SSB5.1}, and subsequently to further enhancements in v6.0 \citep{SSB6}. 
+In the case of the \ac{SynLBD}, only one iteration has so far been released on the \ac{SDS}, but the key shortcomings in the structure of the SynLBD v2.0 \citep{SynLBD20} -- the absence of \ac{NAICS} codes, of any sort of geographic detail, and of indicators of firm structure -- have been reflected in the rejected access applications. 
+As a reminder, access is granted when the technical requests are feasibly satisfied by the data on the \ac{SDS}. 
+In the case of the SynLBD, we can quantify additional data requested that lead to applications being rejected. 
+Out of 99 applications for access to the \ac{SynLBD} received through Jan 2015, 21 (21.21\%) were denied because they were not feasible using the synthetic data (this does not take into account applications that were partially feasible, which fall into the number of approvals). Of those denied, 
+\begin{itemize}
+\item 6 (28.57\%) had requested firm-level variables, 
+\item 11 (52.38\%) had requested data to perform conditional geographic analysis, and
+\item 1 (4.76\%) had requested data for specific \ac{NAICS} industries.
+\end{itemize}
+Such numbers, of course, do not take into account potential requestors that did not apply because a reading of the documentation revealed that the analysis was not feasible.
+
+\subsection{Validation requests}
+\input{validation.tex}
+The last analysis of validation requests goes back to December 2012, and only for the \ac{SynLBD}. At the time, out of approximately 30 users, 3 had requested validation, and 2 of those had requested a second round of validation. [NEEDS updating] A common issue has been that users are unfamiliar with the constraints imposed by the validation procedure, in particular that all such validation requests are treated as an authorized release of results from an analysis of confidential data, and are thus subject to review by the Census Bureau's \ac{DRB}. In particular, the quantity of results requested surpasses not the ability of the confidential servers to compute, but rather is judged to be too high by the rules of the \ac{DRB}. 
+
+\begin{figure}[htb]
+\centering
+\caption{From Bertrand et al (2015), their Figure~I}\label{fig:bertrand}
+\begin{tabular}{cc}
+(a) & (b)\\
+\includegraphics[width=0.4\textwidth]{jma_graph_rel_earn3_syn}&
+\includegraphics[width=0.4\textwidth]{jma_graph_rel_earn3}\\
+\multicolumn{2}{l}{\tiny \it Note: See text for details on computation and provenance.}
+\end{tabular}
+\end{figure}
+
+An example for a successful validation request combined with a cautionary note for users of the \ac{SSB} is illustrated by Figure~\ref{fig:bertrand}. In preparing \cite{Bertrand29012015}, the authors of that paper performed an analysis of the distribution of relative household income using a variety of datasets, including the \ac{SSB}. They obtained fairly robust results across a variety of datasets and time (see their Figure~III, reproduced here in Figure~\ref{fig:bertrand-qje-census}): there is a distinct break in the distribution of couples when the wife's income surpassed 50\%. However, the analysis with the \ac{SSB} produced a very different result, as illustrated in Figure~\ref{fig:bertrand}, Panel (a): there was no such break. The authors requested validation (which the Census Bureau was able to accomplish in a very short time), and the results obtained when their analysis was replicated against the confidential files yielded a different result, consistent with other datasets, as shown in Figure~\ref{fig:bertrand}, Panel (b), corresponding to their Figure~I. The ``success'' alluded to earlier is on both sides of the interaction. The researchers were able to very quickly ascertain that their model, when tested against the confidential data, yielded a publication-worth result. The Census Bureau, in exchange, obtained valuable feedback on the quality of the synthesis models, which they were able to take into account for the next iteration of the data production cycle. The cautionary note is that while useful for exploring the data and for testing models, not every model will yield valid results on the synthetic data.%
+\footnote{We thank Marianne Bertrand for allowing us to use this example, and for kindly having provided the graphs for from the analyses using the \ac{GSF} and the \ac{SSB}.}
+
+
+\begin{figure}[hbt]
+\centering
+\caption{From Bertrand et al (2015)}\label{fig:bertrand-qje-census}
+\includegraphics[width=0.5\textwidth]{Bertrand-QJE-2015-FigureIII}
+\end{figure}
+
+
+\subsection{Prior and subsequent experience in the Census RDC}
+
+
+
+On 2014-10-14, we researched what kind of exposure users of the \ac{SDS} had had to confidential data at the Census Bureau, by investigating whether they had prior or subsequent Census RDC projects. Firgure~\ref{fig:rdcUse} summarizes the results.
+Of the 106 users we identified in this way, 14 were Census internal users, i.e., users who were actively engaged in ongoing Census projects, presumably related to the validation exercises themselves. 
+20 users were also present in some form in the Census RDC system. 11 users had been authorized for at least one RDC project prior to their access to the \ac{SDS}. 
+More of interest, however, are the 3 users who obtained Census RDC access after their initial access to the \ac{SDS}, 
+NA
+We don't have firm evidence of the relationship between the RDC projects and the SDS project, but from personal conversations of the authors with presenters at RDC conferences, at least some of the RDC projects were direct continuation of SDS projects, in domains that were not covered by the synthetic data, but the analysis for which was prepared for on the \ac{SDS}. The average delay between project start on \ac{SDS} and project start on RDC projects for those projects that were authorized was 400 days.
+
+
+\begin{figure}
+\centering
+\caption{Connection between Census RDC usage and Synthetic Data Server}\label{fig:rdcUse}
+\includegraphics{report_on_SDS_2015-useRDCgraph}
+\end{figure}
+
+
+\section{Other activities}
+\input{activities.tex}
+
+\section{Bibliography}
+
+A full and up-to-date bibliography can be found at \myhref{http://www2.vrdc.cornell.edu/news/synthetic-data-server/sds-bibliography}{the SDS website}.
+
+
+
+
+
+
+
+\clearpage
+\singlespacing
+	% ------------------------------ Bibliography---------------------
+
+	\bibliographystyle{\mybibstyle}
+	\bibliography{../../docs/SDS_1042181.bib,../../docs/synlbd-data.bib,../../docs/synlbd-documents.bib,../../docs/ssb-data.bib,../../docs/ssb-documents.bib,../../docs/wsc2013.bib,../../docs/grants.bib}
+	
+	\section{Acronyms used}
+	\input{acronyms} 
+	\newpage
+\tableofcontents
+
+% Appendix
+%\clearpage
+%\appendix
+%\part*{APPENDIX}
+%\addcontentsline{toc}{part}{Appendix} 
+%\setcounter{section}{0}
+%\label{sec:appendix}
+%\input{appendix}
+
+
+\end{document}
+

@@ -1,0 +1,140 @@
+% $Id: synthetic.tex 1720 2015-09-25 14:29:12Z lv39 $
+% $URL: https://forge.cornell.edu/svn/repos/ncrn-cornell/branches/papers/PSD2014/text/synthetic.tex $
+
+The \ac{SynLBD} is a synthetic dataset on establishments with proven analytic validity along several critical dimensions \cite{KinneyEtAl2011}. Additional improvements are currently being developed \cite{KinneyEtAl2013,CES-WP-2014-12}. A growing number of researchers have used the \ac{SynLBD}, and their continued use contributes to the improvement of the \ac{SynLBD}. 
+
+The use of the \ac{SynLBD} for the purposes outlined in this paper is particularly appealing, because its analytic validity has been independently established, while maintaining a high level of data privacy. In fact, for many of the cross-tabulations identified in Table~\ref{tab:bds_e}, no additional disclosure avoidance review would seem necessary. Only tabulations involving state and sub-state geography should require additional review since this variable was removed from the disclosure request that approved the release to the public of the SynLBD.%
+\footnote{The Census Disclosure Review Board has not pronounced itself on the disclosure avoidance methodology proposed here as of July 2014.}
+ 
+The available \ac{SynLBD} is released as a single implicate, and by design, may distort any single analysis by too large an amount. The use of additional implicates for the purposes of BDS table creation may be desirable and will be assessed in later work. 
+
+In this paper, we evaluate a simple algorithm to alleviate the problem of large numbers of 
+suppression, while maintaining high, if not equivalent levels of disclosure protection. We then 
+outline a second algorithm that improves on the first.  An evaluation of the second algorithm is 
+deferred to later work. 
+
+The first algorithm, which we will call the ``drop-in algorithm'', simply replaces a cell that has 
+been suppressed with its synthetic-data equivalent, i.e., the equivalent table cell from a 
+tabulation based on the \ac{SynLBD} alone. The second algorithm, called 
+``forward-longitudinal algorithm'', is slightly more complicated. At any point in time $t$, if a 
+(expanded) suppression algorithm identifies a cell that \emph{would} be suppressed, all 
+establishments that contribute to that cell in  time period $t$ are replaced by synthetic 
+establishments that match on certain characteristics $Z$ in periods $t-p$ through $t$, for $t$ 
+and the next $n$ periods. Synthetic and observed values are then tabulated to create the 
+release statistics. If $Z$ describes only the margin characteristics for the table in question 
+(denoted by $k$ below), and for $p=n=0$, the algorithm reduces to the ``drop-in'' algorithm. 
+
+In this paper, we assess the time-consistency of the first algorithm for a single implicate. 
+Assessing the impact of using multiple implicates is deferred to future work. Identifying 
+acceptable values of $Z$, $p$, and $n$ is deferred to a later version of this paper.
+
+\subsection{Definitions}
+The variable of interest is establishment employment $e_{jt}$, with establishments indexed by $j$ and years indexed by $t$. All other variables (job creation and destruction from establishment entry, exit, expansion and contraction) are derived from that. For instance, an establishment is born at time $t$ if employment is positive for the first time:
+\begin{eqnarray}
+\label{eq:e_birth}
+birth_{jt} &=& \left \lbrace 
+\begin{array}{rl}
+1 &\mbox{if}~~  e_{jt} > 0 ~~ \mbox{and}  ~~e_{jt-s} = 0 ~~\forall s\geq 1~~\\
+0 &\mbox{otherwise}
+\end{array} \right .
+\end{eqnarray}
+We will denote aggregations using capital letters, so (national) employment is denoted as
+\begin{equation}
+\label{eq:national_e}
+E_{\cdot t} = \sum_{i=1}^J e_{it}
+\end{equation}
+and (national) births are
+\begin{equation}
+\label{eq:national_birth}
+Birth_{\cdot t} = \sum_{i=1}^J birth_{it}.
+\end{equation}
+For any establishment $j$, the synthesized version of variable $x_{jt}$ (from a single implicate) is 
+denoted $\tilde{x}_jt$. Furthermore, an establishment $j$ has certain time-varying 
+characteristics $k_t(j)$, such as industry and geographic location, but also derived 
+characteristics, such as establishment or firm age and size. In a slight abuse of notation, $j \in 
+K_t^\prime$ describes the set of firms at time $t$ such that $k_t(j)=k^\prime$.   So generically, 
+\begin{equation}
+\label{eq:sum_X}
+X_{k^\prime t} =  \sum_{j \in K_t^\prime} x_{jt}
+\end{equation}
+describes the different aggregations across establishments having characteristics $k^\prime$ at time $t$, for instance aggregations by establishment age or metropolitan areas. 
+%
+Finally, suppression rules for (aggregate) variable $X$ are captured by $I_{t}^X$, such that the 
+releasable variable $X^o$  under the current regime can be described by
+
+%\begin{equation}
+%\label{eq:supp_x}
+%X_{k^\prime t}^o = X_{k^\prime t}  I_{t}^X 
+%\end{equation}
+\begin{eqnarray}
+\label{eq:supp_x}
+X_{k^\prime t}^o &=& \left \lbrace 
+\begin{array}{rl}
+X_{k^\prime t} &\mbox{if}~~  I_{kt}^X = 1 \\
+\mbox{missing} &\mbox{otherwise}
+\end{array} \right .
+\end{eqnarray}
+
+For later 
+reference, we denote the tabulations created as per (\ref{eq:supp_x}) as \textbf{BDS$^o$}.
+%We will denote by $K_t^\prime \subset K$ the subset of the domain of $K$, such as certain industries, or age categories within certain geographic areas, so that $J_t^j \in K_t^\prime$ 
+
+\subsection{Algorithm 1: Drop-in}
+
+We can now express the ``drop-in'' algorithm, leading to the released variable $X^{(i)}$, as:
+\begin{algorithm}
+\begin{algorithmic}
+\If {$I_{t}^X = 1$ }
+    \State {$X_{k^\prime t}^{(i)} = X_{k^\prime t} $}
+\Else
+        \State {$X_{k^\prime t}^{(i)} =\tilde{X}_{k^\prime t} $}
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+Thus, simply computing a ``SynBDS'', based on the \ac{SynLBD}, in parallel to the computation 
+of the \ac{BDS} (based on the confidential \ac{LBD}), and replacing suppressed cells with their 
+fully synthetic counterparts, yields a dataset without missing observations. Variations can 
+encompass using the average of multiple implicates  as the replacement value. In 
+general, increasing the number of implicates will improve the analytic validity, but reduce the 
+protection provided by the synthesis process. 
+
+Because no time-consistency is imposed, this method can lead to seam biases or higher 
+intertemporal variance. We will return to this issue in Section~\ref{sec:analysis}. For later 
+reference, we denote the tabulations created by Algorithm~1 as \textbf{BDS$^{(i)}$}.
+
+\subsection{Algorithm 2: Forward-longitudinal}
+
+In part to address the possible time-inconsistencies we propose an 
+alternative algorithm.  In order to minimize future seam issues, we remove establishments (or 
+firms) that 
+contribute to sensitive cells of tabulations with characteristics $k^\prime t$, for $t$ and the next 
+$n$ periods. These establishments are replaced by  synthetic establishments that match on 
+characteristics $k^\prime t$, and we simply replace the observed values in the database $x_{js}$ 
+with the synthetic values $\tilde{x}_{js}$ (for all variables), for $s=t,\dots,t+n$.%
+\footnote{We thus re-use the index $j$ for both observed and synthetic establishments.}
+For convenience, denote by $J_{k^\prime t}^-$ the set of establishments for which observed values $x_{jt}$ do not contribute to any tabulations at time $t$.  In its simplest form, the algorithm can be expressed as
+\begin{algorithm}
+\begin{algorithmic}
+\State {Compute: $X_{k^\prime t} = \sum_{j \in K_t^\prime} x_{jt}$}
+\State{Compute: $I_{t}^X$}
+\If {$I_{t}^X = 0$ }
+    \State {Assign all $j \in K_t^\prime$ to $J_{k^\prime t}^-$ }
+    \State {Assign all $j \in J_{k^\prime s}^-$ to $J_{k^\prime t}^-$ for $t > s > t-n$}
+\EndIf
+\State { Compute: %
+$$X_{k^\prime t}^{(ii)} = 
+               \sum_{j \in \left \lbrace K_t^\prime \cap J_{k^\prime t}^- \right \rbrace }
+                               \tilde{x}_{jt} 
+	          +
+	          \sum_{j \in  K_t^\prime \wedge j \notin J_{k^\prime t}^-  }
+	                                         {x}_{jt} 
+$$}
+
+\end{algorithmic}
+\end{algorithm}
+
+For $n=\infty$, $J_{t}$ is an absorbing set, which seems undesirable. For $n=1$, this reduces  to Algorithm~1.%
+\footnote{Alternatively to the combining rule described in Algorithm~2, we could also specify  a per-establishment weight $w_{jt} \in [0,1]$ that declines to $0$ 
+as $s$ approaches $t-n$. $w_{jt}$ is adjusted as a function of membership in $J_{k^\prime t}^-$, 
+and we compute $X_{k^\prime t}^{(ii)} = \sum_{j} w_{jt}\tilde{x}_{jt} + (1-w_{jt} )x_{jt}$. } 
+For reference, we denote the tabulations created by Algorithm~2 as \textbf{BDS$^{(ii)}$}.

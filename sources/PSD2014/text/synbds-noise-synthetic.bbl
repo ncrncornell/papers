@@ -1,0 +1,109 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{AbowdEtAl2012}
+Abowd, J.M., Gittings, K., McKinney, K.L., Stephens, B.E., Vilhuber, L.,
+  Woodcock, S.: Dynamically consistent noise infusion and partially synthetic
+  data as confidentiality protection measures for related time-series. Tech.
+  rep., Federal Committee on Statistical Methodology (January 2012),
+  \url{http://www.fcsm.gov/events/papers2012.html}
+
+\bibitem{AbowdVilhuber2010}
+Abowd, J.M., Vilhuber, L.: Synthetic data server (2010),
+  \url{http://www.vrdc.cornell.edu/sds/}
+
+\bibitem{RePEc:iab:iabfme:201101_de}
+Drechsler, J.: Synthetische {S}cientific-use-files der {W}elle 2007 des
+  {IAB}-{B}etriebspanels. FDZ Methodenreport 201101\_de, Institute for
+  Employment Research, Nuremberg, Germany (Jan 2011),
+  \url{http://ideas.repec.org/p/iab/iabfme/201101_de.html}
+
+\bibitem{RePEc:taf:japsta:v:39:y:2012:i:2:p:243-265}
+Drechsler, J.: New data dissemination approaches in old {E}urope -- synthetic
+  datasets for a {G}erman establishment survey. Journal of Applied Statistics
+  39(2),  243--265 (April 2012),
+  \url{http://ideas.repec.org/a/taf/japsta/v39y2012i2p243-265.html}
+
+\bibitem{DrechslerReiter2009}
+Drechsler, J., Reiter, J.P.: Disclosure risk and data utility for partially
+  synthetic data: An empirical study using the {G}erman {IAB} {E}stablishment
+  {S}urvey. , vol. 25, 589-603. Journal of Official Statistics  25(12),
+  589--603 (December 2009),
+  \url{http://ideas.repec.org/a/eee/csdana/v55y2011i12p3232-3243.html}
+
+\bibitem{RePEc:bes:jnlasa:v:105:i:492:y:2010:p:1347-1357}
+Drechsler, J., Reiter, J.P.: Sampling with synthesis: A new approach for
+  releasing public use census microdata. Journal of the American Statistical
+  Association  105(492),  1347--1357 (2010),
+  \url{http://ideas.repec.org/a/bes/jnlasa/v105i492y2010p1347-1357.html}
+
+\bibitem{Gittings2009thesis}
+Gittings, R.K.: Essays in labor economics and synthetic data methods. Ph.d.,
+  Cornell University (2009)
+
+\bibitem{BDS2}
+Haltiwanger, J., Jarmin, R., Miranda, J.: Jobs created from business startups
+  in the united states (2008),
+  \url{https://www.census.gov/ces/pdf/BDS_StatBrief1_Jobs_Created.pdf}
+
+\bibitem{NBERw16300}
+Haltiwanger, J.C., Jarmin, R.S., Miranda, J.: Who creates jobs? small vs. large
+  vs. young. Working Paper 16300, National Bureau of Economic Research (August
+  2010), \url{http://www.nber.org/papers/w16300}
+
+\bibitem{RePEc:iab:iabfme:201006_en}
+Hethey, T., Schmieder, J.F.: Using worker flows in the analysis of
+  establishment turnover : {E}vidence from {G}erman administrative data. FDZ
+  Methodenreport 201006\_en, Institute for Employment Research, Nuremberg,
+  Germany (Aug 2010), \url{http://ideas.repec.org/p/iab/iabfme/201006_en.html}
+
+\bibitem{HolanEtAl2010}
+Holan, S.H., Toth, D., Ferreira, M.A.R., Karr, A.F.: Bayesian multiscale
+  multiple imputation with implications for data confidentiality. Journal of
+  the American Statistical Association  105(490),  564--577 (2010),
+  \url{http://dx.doi.org/10.1198/jasa.2009.ap08629}
+
+\bibitem{tas2006}
+KARR, A.F., KOHNEN, C.N., OGANIAN, A., REITER, J.P., SANIL, A.P.: A framework
+  for evaluating the utility of data altered to protect confidentiality  60(3),
+   1--9 (2006)
+
+\bibitem{KinneyEtAl2013}
+Kinney, S.K., Reiter, J.: {SynLBD}: providing firm characteristics on synthetic
+  establishment data. Presentation, World Statistics Conference (2013)
+
+\bibitem{CES-WP-2014-12}
+Kinney, S.K., Reiter, J., Miranda, J.: Improving the {S}ynthetic {L}ongitudinal
+  {B}usiness {D}atabase. Working Paper 14-12, U.S. Census Bureau, Center for
+  Economic Studies (2014)
+
+\bibitem{KinneyEtAl2011}
+Kinney, S.K., Reiter, J.P., Reznek, A.P., Miranda, J., Jarmin, R.S., Abowd,
+  J.M.: Towards unrestricted public use business microdata: The {S}ynthetic
+  {L}ongitudinal {B}usiness {D}atabase. International Statistical Review
+  79(3),  362--384 (December 2011),
+  \url{http://ideas.repec.org/a/bla/istatr/v79y2011i3p362-384.html}
+
+\bibitem{Ashwin2008}
+Machanavajjhala, A., Kifer, D., Abowd, J.M., Gehrke, J., Vilhuber, L.: Privacy:
+  {T}heory meets practice on the map. International Conference on Data
+  Engineering (ICDE)  (2008)
+
+\bibitem{Rodriguez2007}
+Rodr\'iguez, R.: Synthetic data disclosure control for american community
+  survey group quarters (2007)
+
+\bibitem{RePEc:cen:wpaper:13-19}
+Sakshaug, J.W., Raghunathan, T.E.: {Synthetic Data For Small Area Estimation In
+  The American Community Survey}. Working Papers 13-19, Center for Economic
+  Studies, U.S. Census Bureau (Apr 2013),
+  \url{http://ideas.repec.org/p/cen/wpaper/13-19.html}
+
+\bibitem{SynLBD20}
+{U.S. Census Bureau}: Synthetic {LBD} {Beta} version 2.0. [computer file],
+  {U.S. Census Bureau} and Cornell University, Synthetic Data Server
+  [distributor], Washington,DC and Ithaca, NY, USA (2011),
+  \url{http://www2.vrdc.cornell.edu/news/data/lbd-synthetic-data/}
+
+\end{thebibliography}

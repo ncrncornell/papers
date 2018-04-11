@@ -1,0 +1,38 @@
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{LaTeXparent=0,0,Presentation-CAFE-displacement-subdoc.tex}
+% $Id: Presentation-CNSTAT2015-appendix.tex 1541 2015-05-03 01:57:12Z lv39 $
+% $URL: https://forge.cornell.edu/svn/repos/ncrn-cornell/branches/papers/CNSTAT2015/text/Presentation-CNSTAT2015-appendix.tex $
+
+% Stuff here that need not go in the main presentation
+% such as bibliography, additional tables
+ 
+
+\begin{slide}
+\frametitle{References}
+\tiny
+\bibliographystyle{chicagoa} 
+\bibliography{abbrev,\jobname.bib}
+\end{slide}
+\ifpdf
+\IfFileExists{\jobname.bib}{\embedfile{\jobname.bib}}{}
+\IfFileExists{abbrev.bib}{\embedfile{abbrev.bib}}{}
+\fi
+
+
+
+
+%
+% Reference to itself
+%
+
+\begin{frame}[fragile]
+{\huge The end}
+\vfill
+\verbatimsize
+\begin{verbatim}
+ $Id: Presentation-CNSTAT2015-appendix.tex 1541 2015-05-03 01:57:12Z lv39 $
+\end{verbatim}
+\end{frame}
+
+
+

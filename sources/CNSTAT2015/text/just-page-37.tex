@@ -1,0 +1,68 @@
+\documentclass[xcolor=table,compress]{beamer}
+\author{Lars Vilhuber}
+\usepackage{graphicx}
+%\usepackage{pstricks}
+\usepackage{pifont}
+\usepackage{chicago} 
+\newcommand{\citet}{\citeN}
+\usepackage{pgf}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[latin1]{inputenc}
+\usepackage{colortbl}
+\usepackage[english]{babel}
+\usepackage{calc}
+%\usepackage{lmodern}
+%\usepackage[T1]{fontenc} 
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+%\usepackage{qtree}
+\usetikzlibrary{shapes,arrows,positioning}
+%gets rid of bottom navigation bars
+\setbeamertemplate{footline}[page number]{}
+
+%gets rid of navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+\begin{document}
+\tikzstyle{entity} = [rectangle, rounded corners , minimum height=4em, draw, fill=yellow!20, 
+    text width=4.5em, text badly centered,  inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20,
+    minimum height=2em]
+
+
+\begin{frame}{DDI+PROV for workflow}
+
+\begin{tikzpicture}[auto,
+	scale=0.6,every node/.style={transform shape},
+	myscope/.style={node distance=1em and 0em}]
+    % Place nodes
+    \node [cloud] (dataw) {Data Warehouse};
+    \node [entity, right=5em of dataw] (LBD) {LBD};
+    \node [block, fill=black!20, right=4em of LBD] (program) {Program};
+    \node [entity, below=4em of program] (results) {Results};
+    \node [right=8em of results] (placeh) {};
+\only<2->{    \node [star, star points=7, draw, fill=blue!20, below=8em of dataw](DDI) {DDI};}
+\only<3->{    \node [star, star points=7, draw, fill=blue!20, above=12em of placeh](PROV) {PROV};}
+    % Draw edges
+\only<1-2>{
+    \path [line]  (dataw) -- node  {hadMember} (LBD) ;
+    \path [line] (program) -- node  {used} (LBD) ;
+    \path [line] (results) -- node  {isGeneratedby} (program);}
+\only<2->{    \path [line,color=blue] (DDI) -- (LBD);
+    \path [line,color=blue] (DDI) -- (results);}
+\only<3>{
+    \path [line]  (dataw) -- node [text=red] (l1) {hadMember} (LBD) ;
+    \path [line] (program) -- node [text=red]  (l2) {used} (LBD) ;
+    \path [line] (results) -- node [text=red]  (l3) {isGeneratedby} (program);
+    \path [line, color=red] (PROV) -- (l1);
+    \path [line, color=red] (PROV) -- (l2);
+    \path [line, color=red] (PROV) -- (l3);
+    }
+
+\end{tikzpicture}
+\end{frame}
+\end{document}

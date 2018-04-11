@@ -1,0 +1,381 @@
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{LaTeXparent=0,0,Presentation-CAFE-displacement-subdoc.tex}
+% $Id: Presentation-ICES2012-reallocation-subdoc.tex 1123 2012-06-11 02:15:29Z vilhu001 $
+% $URL$
+
+%
+%  
+%
+\section[Introduction]{Introduction to the paper}
+
+\subsection[Disclaimer]{Disclaimer}
+
+\begin{slide}
+\frametitle{Disclaimer}
+\footnotesize
+  \begin{itemize}
+  \item Vilhuber's research was supported by NSF Grant SES-0820349, SES-1042181, and SES-1042181. 
+  \item Part of the research results were obtained while Vilhuber was a
+    Special Sworn Status researcher of the U.S. Census Bureau at the
+    Center for Economic Studies, and previously reported in B\'erub\'e, Dostie, Vilhuber (CAED, 2012).  
+    All such results have been screened to insure that no confidential data are revealed. 
+  \item  Research results and conclusions expressed are those of the authors and
+    do not necessarily reflect the views of the Census Bureau. 
+
+  \end{itemize}
+\end{slide}
+
+\begin{slide}
+\frametitle{Disclaimer (2)}
+\begin{center}
+\large    This is work in progress, and results are very preliminary!
+
+\end{center}
+\end{slide}
+
+% \begin{frame}
+% 	\frametitle{Contents}
+% 	\tableofcontents[%
+% 		currentsection, % causes all sections but the current to be shown in a semi-transparent way.
+% % 		currentsubsection, % causes all subsections but the current subsection in the current section to ...
+% % 		hideallsubsections, % causes all subsections to be hidden.
+% 		hideothersubsections, % causes the subsections of sections other than the current one to be hidden.
+% % 		part=, % part number causes the table of contents of part part number to be shown
+% 		pausesections, % causes a \pause command to be issued before each section. This is useful if you
+% % 		pausesubsections, %  causes a \pause command to be issued before each subsection.
+% % 		sections={ overlay specification },
+% 	]
+\begin{slide}
+
+  \frametitle{Outline}
+  \tableofcontents[part=1,hideallsubsections]
+\end{slide}
+
+
+
+\section{Background}
+
+\begin{frame}
+\frametitle{Background}
+\begin{block}{Cross-national analysis}
+\begin{itemize}[<+->]
+\item Benoit Dostie (HEC Montr\'eal) and I started several years exploring cross-national studies of the contribution of labor reallocation to productivity (several co-authors)
+\item We started several years ago with Canadian survey (WES), French and US administrative data (CAED2009).
+\item Subsequently US (LBD) and Canadian (T2LEAP) administrative data (combined in the US with firm survey data: ASM)
+\item ``Multi-site, multi-author'' replication approach
+\item start with same code, sit in front of respective secure terminals
+\item ... then see what happens....
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Replication issues}
+\begin{block}{Slew of issues}
+\begin{itemize}[<+->]
+\item lack of common variable names
+\item code divergence/creep
+\item different merge/match issues 
+\item different variable definitions - obvious and subtle - that affect the outcomes
+\item access issues
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Possible solutions}
+\begin{block}{Remote access}
+\begin{itemize}[<+->]
+\item View distinct data bases from same office
+\item Problem: not available for most countries
+\end{itemize}
+\end{block}
+\pause
+\begin{block}{Remote submission}
+\begin{itemize}[<+->]
+\item Common code base, submit to separate remote submission facilities
+\item Problem: not available in most countries, not robust/standard in others
+\end{itemize}
+\end{block}
+
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Possible solutions}
+\begin{block}{Synthetic public-use data}
+\begin{itemize}[<+->]
+\item Much easier access (remote, own computer)
+\item Possibility: data from several countries on same server
+\item Possibility: data constructed/modelled in equivalent ways
+\item Problem: not yet available for most countries
+\item Problem: limited set of variables when available
+\item Problem: need to create it first....
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\section{Goals}
+\begin{frame}
+\frametitle{Goals}
+\begin{block}{Short-term goals}
+\begin{itemize}[<+->]
+\item Construct lower-quality synthetic variables for US (outside-the-firewall synthesis)
+\item Attach to Synthetic LBD v2, without building new synthetic data models
+\end{itemize}
+\end{block}
+\pause
+\begin{block}{Mid-term goals}
+\begin{itemize}[<+->]
+\item Allow for realistic, if not analytically valid modelling using Synthetic LBD
+\item using remote access! Simultaneous view on Canadian (confidential) and US (synthetic) data
+\item Final analysis on Gold-Standard LBD + linked variables $\rightarrow$ paper! 
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\section{Method}
+\begin{frame}
+\frametitle{Advantages of productivity decompositions}
+\begin{block}{Key to creating additional synthetic variables}
+\begin{itemize}
+\item Sufficiently small subgroups, classified by variables already on SynLBD
+\item Of relevance to multiple studies
+\end{itemize}
+\end{block}
+\begin{block}{Benefits of productivity decompositions}
+\begin{itemize}
+\item Classifies establishments (firms) by a handful of categories (growing/declining/exiting/entering/etc.)
+\item Requires only a small number of frequently used measures (sales, value-added, profits)
+\item Ratios often sufficient (sales \underline{per} worker)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Background on decompositions}
+\begin{block}{Aggregate productivity}
+\begin{equation}
+P_t = \sum_{j \in J} \theta_{jt}p_{jt}
+\end{equation}
+$\theta_{jt}$ represents firm $j$'s market share (\underline{share of labor} or share of sales), and $p_{jt}$ is some measure of firm $j$'s  productivity (e.g., \underline{sales per worker} or value-added per worker).
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Productivity growth}
+\begin{block}{Productivity growth}
+
+\begin{equation}
+\Delta P_{t,t-k} = \sum_{j \in J_t} \theta_{jt} p_{jt} - \sum_{j \in J_{t-k}} \theta_{jt-k} p_{jt-k}
+\end{equation}
+
+\end{block}
+\end{frame}
+
+\subsection{Decompositions}
+%\begin{slide}
+%\frametitle{BHC decomposition}
+%  \begin{itemize}[<+->]
+%  \item BHC decomposition \cite{Bailyandal:1992}
+%\begin{eqnarray}
+%\Delta P_{t} &= &\alert<3>{\sum_{i \in C_t} \theta_{it-1} \Delta p_{it}} \nonumber\\
+%			 & +& \alert<4,6>{\sum_{i \in C_t} \Delta \theta_{it}  p_{it-1}} 
+%             + \alert<5,6>{\sum_{i \in C_t} \Delta \theta_{it}  \Delta p_{it}} \nonumber\\
+%             &+&
+%                 \alert<7>{\sum_{i \in E_t}  \theta_{it}  p_{it}}
+%                  -
+%                 \alert<8>{\sum_{i \in X_t}  \theta_{it-1}  p_{it-1}}  \\
+%\pause       & =& 
+%                   \alert<3>{Within} \pause 
+%                  + \alert<4,6>{Between} \pause 
+%                  + \alert<5,6>{Cross} \pause \pause
+%                  + \alert<7>{Entry} \pause 
+%                  - \alert<8>{Exit} \pause \nonumber 
+%\label{eq:bhc_decomposition}
+%\end{eqnarray}\note<1>{with the usual notation of $C_t$ as (the list of) establishments present in both $t$ and
+%$t-1$ (continuers), $E_t$ entrants (establishments first present in period
+%$t$) and $X_t$ exiters (establishments no longer active in $t$). }
+%%\item where $J_t = \lbrace C_t, E_t \rbrace$ and $J_{t-k} = \lbrace C_t, X_t \rbrace$
+%\note<2>{Labor market reallocation's contribution to productivity growth is represented by the four other terms. The second term takes into account changes in market shares weighted by beginning of period's productivity. The third term (usually referred to as the covariance effect) will be positive if firms that are able to increase their productivity are also able to increase their market share. Together, the sum of the second and third term represent the inter-firms effect. The two last terms represent the net entry effect.}
+% \end{itemize}
+%\end{slide}
+
+
+\begin{slide}
+\frametitle{Productivity decomposition}
+  \begin{itemize}[<+->]
+
+\item \citet{Bailyandal:1992}, \citet{Fosterandal:2001} 
+\begin{eqnarray}
+\label{eq:fhk_decomposition}
+\label{eq:FHC}
+\Delta P_{t,t-k} & = & \sum_{j \in C} \theta_{jt-k} \Delta p_{j} 
+	              +  \sum_{j \in C} \Delta \theta_{j} \left (p_{jt-k} - \alert<2>{P_{ref}} \right) \nonumber\\
+	             & + & \sum_{j \in C} \Delta \theta_{j} \Delta p_{j}  
+	              +  \sum_{j \in E} \theta_{jt} \left( p_{jt} - \alert<2>{P_{ref}} \right) \nonumber\\
+	             & - & \sum_{j \in X} \theta_{jt-k} \left( p_{jt-k} - \alert<2>{P_{ref}}\right)\nonumber
+\end{eqnarray}
+\item contribution of firm's $p_i, i=t,t-k$ relative to some reference productivity  \alert<2>{$P_{t-k}$}
+\item \citet{BaldwinGu2006,BaldwinGu2008} add further decomposition into productivity changes associated with 
+\begin{itemize}
+\item continuing firms that lose market share
+\item continuing firms that gain market share
+\end{itemize}
+ \end{itemize}
+\end{slide}
+
+
+%\begin{slide}
+%\frametitle{US data}
+%\begin{block}{ASM+CM}
+%\begin{itemize}[<+->]
+%\item Available: 1973-2009 (1987-2009 used)
+%\item CM: quinquennial census of firms (years in 2 and 7)
+%\item CM: sampled in Business Register, includes ASM establishments in CM years
+%\item ASM: Certainty sample for large firms, size-stratification for smaller firms
+%\item ASM: about 50,000 establishments per year
+%\item ASM: panel for 5 years, sampled in CM, refreshed based on expansion of the frame through tax records
+%\item ASM/CM: information on employment, wages, sales, value-added
+%\end{itemize}
+%\end{block}
+%\end{slide}
+
+
+\begin{slide}
+\frametitle{Data sources US}
+\begin{block}{LBD}
+\begin{itemize}[<+->]
+\item longitudinal research file \cite{MirandaJarmin2002}
+\item contains link id to ASM, CM, employment
+% \hfill \hyperlinkframestartnext{\beamerskipbutton{Results}}
+\end{itemize}
+\end{block}
+\begin{block}{ASM, CM}
+\begin{itemize}[<+->]
+\item multiple measures of productivity
+\item CM: sampled in Business Register, includes ASM establishments in CM years
+\item ASM: Certainty sample for large firms, size-stratification for smaller firms
+\item ASM: about 50,000 establishments per year
+\item ASM: panel for 5 years, sampled in CM, refreshed based on expansion of the frame through tax records
+\end{itemize}
+\end{block}
+\end{slide}
+
+\begin{frame}
+\frametitle{Methodology for US}
+\begin{block}{Matching methodology using LBD}
+\begin{itemize}[<+->]
+\item Define births/deaths/continuers in LBD
+\item Match to records in ASM/CM as feasible
+\item Create panel weight to match birth/death rates in LBD (here: by ten size-classes)
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{slide}
+\frametitle{Overview of LBD data}
+\centering
+\includegraphics[width=\textwidth]{LBD_Provenance}
+\end{slide}
+
+
+\begin{frame}
+\frametitle{Releasable data}
+\begin{block}{Relevant data}
+\begin{tabular}{llcc}
+&& GS  & SynLBD \\
+\hline
+Share of continuers & $S_C$ & m & m\\
+Share of declining continuers & $S_D$ & m & m \\
+Share of eNtrants & $S_N$ & m & m\\
+Share of eXiters & $S_X$ & m & m\\
+\hline
+\\
+&& ASM/CM & SynLBD+ \\
+\alert{Matchrate of LBD} & & m & i \\
+Prod. of economy & P & m & i\\
+Prod. of continuers & $P_C$ & m &i\\
+Prod. of declining continuers & $P_D$ & m & i \\
+Prod. of eNtrants & $P_N$ & m & i\\
+Prod. of eXiters & $P_X$ & m & i\\
+\hline
+\end{tabular}
+and standard errors (or higher moments) for each.
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Finalizing}
+\begin{block}{Next steps: SynASM}
+\begin{itemize}[<+->]
+\item release parameters above
+\item define distributions
+\item construct pseudo-matched sample using LBDNUM
+\item draw records
+\end{itemize}
+\onslide<5>{The synthetic ASM thus created can be (re-)linked to the SynLBD by future users, using programs that are directly
+transferrable to the Census RDC for validation/remote or delayed processing}
+\end{block}
+\end{frame}
+
+%
+%
+% Results
+%
+%
+
+
+%\subsection{Benchmark}
+%\begin{frame}
+%\frametitle{Comparing to FHK2001}
+%\includegraphics[width=\textwidth]{graph_naicssec_fhk_comparo.png} 
+%\end{frame}
+
+\section{Results}
+\begin{frame}
+\frametitle{}
+\large{Results}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{US and Canada: FHK}
+\includegraphics[width=0.5\textwidth]{graph_naicssec_fhk.png} 
+\includegraphics[width=0.5\textwidth]{graph_ca_naicssec_FHK.png} 
+
+\tiny{Source: B\'erub\'e, Dostie, Vilhuber, 2012, CAED and CEA}
+\end{frame}
+
+
+
+
+%
+% ============= Conclusion =================
+%
+%
+\section{Conclusion}
+\label{sec:Conclusion}
+
+
+\subsection{Preliminary conclusions}
+\begin{slide}
+\frametitle{Preliminary conclusions and speculation}
+\begin{itemize}[<+->]
+\item Cross-national analysis is hard - {the first time}
+\item Creating additional lower-quality variables can accelerate future researchers' analysis by allowing for more complex ``test runs'' without the complexity (time!) of additional validated synthetic data models
+\end{itemize}
+\end{slide}
+
+\begin{frame}
+\frametitle{}
+\begin{block}{Thank you.}
+
+\end{block}
+\end{frame}

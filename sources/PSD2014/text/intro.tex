@@ -1,0 +1,29 @@
+% $Id: intro.tex 1720 2015-09-25 14:29:12Z lv39 $ 
+% $URL: https://forge.cornell.edu/svn/repos/ncrn-cornell/branches/papers/PSD2014/text/intro.tex $
+
+The \acf{BDS} were first released in 2008, providing novel statistics on business startups on a comprehensive basis for the U.S. economy \cite{BDS2}. They have been used in a number of recent publications, addressing questions of firm dynamics, who creates jobs, etc. \cite{NBERw16300}. 
+
+The \ac{BDS} are sourced from confidential microdata in the \acf{LBD}. It
+provides measures of business openings and closings, and job creation and destruction, by a variety of cross-classifications (firm and establishment age and size, industrial sector, and geography).
+Since the first release, additional cross-tabulations have been added each year: initially provided only based on  firm charateristics, tabulations based on establishment characteristics were later added, as were additional geography cross-tabulations (Metropolitan Statistical Area, and Metro/Non-Metro).  Sensitive data are currently protected through suppression. However, as additional tabulations are being developed, at ever more detailed geographic levels, the number of suppressions increases dramatically.\footnote{The next set of expansions include plans to provide additional industry detail} 
+
+This paper explores the option of providing public-use data that are analytically valid and 
+without suppressions, by leveraging synthetic data to replace observations in sensitive cells. The 
+use of synthetic data in the provision of public-use tabulations has increased in the United 
+States. \cite{Ashwin2008} describe the use of synthetic data in the case of the OnTheMap data 
+visualization, and the use of partially synthetic data in tabulations has been explored by others 
+\cite{AbowdEtAl2012,DrechslerReiter2009,RePEc:cen:wpaper:13-19,Rodriguez2007,AbowdVilhuber2010}.
+ Few have attempted to provide synthetic data for business data - the cases we are aware of are 
+the Synthetic LBD \cite{KinneyEtAl2011}, on which we will rely heavily in this approach, and a 
+synthetic version of the IAB Establishment Panel 
+\cite{RePEc:iab:iabfme:201101_de,RePEc:iab:iabfme:201006_en,RePEc:taf:japsta:v:39:y:2012:i:2:p:243-265}.
+ This is, to the best of our knowledge, the first attempt to integrate synthetic data into a 
+public-use data tabulation for businesses.
+
+We leverage the existence of a sophisticated partially synthetic data file the Synthetic LBD 
+\cite{SynLBD20}, 
+henceforth \acs{SynLBD} -- in combination with the techniques first expressed in 
+\cite{Gittings2009thesis} and \cite{RePEc:bes:jnlasa:v:105:i:492:y:2010:p:1347-1357} to replace 
+sensitive cells with tabulations based on synthetic 
+data. We start by describing the extent of suppressions in the \ac{BDS}, then lay out the algorithm to combine synthetic and confidential data for the purposes of tabulation. Preliminary results are discussed, and an outlook given on the next steps necessary to achieve a robust public-use tabulation. 
+

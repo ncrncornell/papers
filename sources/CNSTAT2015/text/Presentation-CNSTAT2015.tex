@@ -1,0 +1,163 @@
+% $Id: Presentation-CNSTAT2015.tex 1552 2015-05-08 02:38:06Z lv39 $
+
+% normal line:
+\documentclass[xcolor=table,compress]{beamer}
+% to create notes:
+%\documentclass[handout,notes=only]{beamer}
+% to create handouts
+%\documentclass[xcolor=table,handout,compress]{beamer}
+% to create a different kind of handouts
+%\documentclass{article}
+%\usepackage[envcountsect]{beamerarticle}
+
+%\setbeameroption{handout}
+%\setbeameroption{show notes}
+
+
+%
+% Packages
+%
+\mode<article> % only for the article version
+{
+  \usepackage{fullpage}
+  \usepackage{hyperref}
+}
+\usepackage{ifpdf}
+\ifpdf 
+\usepackage{embedfile}
+\embedfile{\jobname.tex}
+\fi
+
+\usepackage{graphicx}
+%\usepackage{pstricks}
+\usepackage{pifont}
+\usepackage{chicago} 
+\newcommand{\citet}{\citeN}
+\usepackage{pgf}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[latin1]{inputenc}
+\usepackage{colortbl}
+\usepackage[english]{babel}
+\usepackage{calc}
+%\usepackage{lmodern}
+%\usepackage[T1]{fontenc} 
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+%\usepackage{qtree}
+\usetikzlibrary{shapes,arrows,positioning}
+
+\usepackage{times}
+%\usepackage{colortbl}
+
+%============================================================
+% Beamer specific styles and configs
+%============================================================
+
+\mode<presentation>
+{
+% alternative, could always use
+%\usetheme{Census}
+\usetheme{Cornell}
+\useoutertheme{Cornell}
+}
+
+
+%\setbeamercovered{dynamic}
+
+
+%============================================================
+% Title
+%============================================================
+
+\title[Broadening data access]%
+{Broadening data access through synthetic data}
+\author[Vilhuber]{%
+  Lars~Vilhuber\inst{1} }
+\institute[Cornell]{
+  \inst{1}%
+  \includegraphics[height=10pt]{cu_logo_only}
+    Labor Dynamics Institute, 
+   ILR, 
+  Cornell University; Cornell NCRN node
+%  \and
+%  \inst{2}%
+%  Center for Economic Studies/LEHD, %\includegraphics[height=7pt]{census-wordmark-transparent}
+%  U.S. Census Bureau
+}
+\date[CNSTAT2015]{NCRN Meetings Spring 2015 @ NAS}
+\subject{Synthetic data, LBD, SIPP}
+
+%
+% Some useful commands
+%
+
+\newcommand{\rarrow}{\selectfont\ding{220}}
+\newcommand{\skiplink}{\tiny{\gray\selectfont\ding{59}}}
+\newcommand{\goback}{\Acrobatmenu{GoBack}{\gray\selectfont\ding{242}}}
+\newcommand{\x}{\selectfont\ding{52}}
+\newcommand{\verbatimsize}{\tiny}
+\newcommand{\tablesize}{\footnotesize}
+
+\newenvironment{slide}{\begin{frame}}{\end{frame}}
+%
+% The document proper
+%
+\begin{document}
+
+\frame{\titlepage
+\centering
+\tiny with input from John Abowd (NCRN, Cornell), Jerry Reiter (NCRN, Duke), Luke Shaefer (NCRN, Michigan), 
+Saki Kinney (NISS), Jörg Drechsler (IAB Germany), Javier Miranda, Martha Stinson, Gary 
+Benedetto, Lori Reeder (Census Bureau). Support through NSF Grant SES-0820349, SES-0922005, 
+SES-1042181, {\bf SES-1131848}, and Alfred P. Sloan Foundation grant G-2015-13903. 
+  }
+
+%\part<presentation>*{Outline}
+%
+%\begin{frame}
+%  \frametitle{Outline}
+%  \tableofcontents[part=1,pausesections]
+%\end{frame}
+
+% This puts the partial table of contents at the start of each subsection
+%\AtBeginSubsection[]
+%{
+%  \begin{frame}<beamer>
+%    \frametitle{Outline}
+%    \tableofcontents[current,currentsubsection]
+%  \end{frame}
+%}
+
+
+\newcommand{\mytitlepage}[1]{
+  \begin{centering}
+    {\usebeamerfont{subsection name}\usebeamercolor[fg]{subsection name}}
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,center]{part title}
+      \usebeamerfont{subsection title}#1
+    \end{beamercolorbox}
+  \end{centering}
+}
+
+\part<presentation>{Main Talk}
+
+%
+%  From this point on, we should probably extract it to a sub-document
+%
+
+\include{Presentation-CNSTAT2015-subdoc}
+\ifpdf
+\embedfile{\jobname-subdoc.tex}
+\fi
+
+%\part<presentation>{Appendix}
+
+%\include{Presentation-CNSTAT2015-appendix}
+%\ifpdf
+%\embedfile{\jobname-appendix.tex}
+%\fi
+
+\end{document}
+
+

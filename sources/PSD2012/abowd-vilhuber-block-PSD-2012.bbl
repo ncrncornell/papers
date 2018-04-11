@@ -1,0 +1,111 @@
+\begin{thebibliography}{10}
+
+\bibitem{AbowdEtAl2012}
+Abowd, J.M., Gittings, K., McKinney, K.L., Stephens, B.E., Vilhuber, L.,
+  Woodcock, S.:
+\newblock Dynamically consistent noise infusion and partially synthetic data as
+  confidentiality protection measures for related time-series.
+\newblock Technical report, Federal Committee on Statistical Methodology
+  (January 2012)
+
+\bibitem{AbowdEtAl2009}
+Abowd, J.M., Stephens, B.E., Vilhuber, L., Andersson, F., McKinney, K.L.,
+  Roemer, M., Woodcock, S.D.:
+\newblock The {LEHD} infrastructure files and the creation of the {Q}uarterly
+  {W}orkforce {I}ndicators.
+\newblock In Dunne, T., Jensen, J.B., Roberts, M.J., eds.: Timothy Dunne, J.
+  Bradford Jensen, and Mark J. Roberts.
+\newblock University of Chicago Press (2009)
+
+\bibitem{AbowdVilhuber2010}
+Abowd, J.M., Vilhuber, L.:
+\newblock Synthetic data server (2010)
+
+\bibitem{BlankRasmussen2004}
+Blank, G., Rasmussen, K.:
+\newblock The {D}ata {D}ocumentation {I}nitiative: {T}he value and significance
+  of a worldwide standard.
+\newblock Social Science Computer Review \textbf{22}(3) (2004)  307--318
+
+\bibitem{Bujnowska2012}
+Bujnowska, A.:
+\newblock European regulations and current changes.
+\newblock Presentation, First Data without Boundaries European Data Access
+  Forum (March 2012)
+
+\bibitem{DavisHaltiwangerSchuh}
+Davis, S.J., Haltiwanger, J.C., Schuh, S.:
+\newblock Job creation and destruction.
+\newblock MIT Press, Cambridge, MA (1996)
+
+\bibitem{DunneRobertsSamuelson1989}
+Dunne, T., Roberts, M.J., Samuelson, L.:
+\newblock The {G}rowth and {F}ailure of {U}.{S}. {M}anufacturing {P}lants.
+\newblock Quarterly Journal of Economics \textbf{104}(4) (1989)  671--698
+
+\bibitem{GregoryHeus2007}
+Gregory, A., Heus, P.:
+\newblock {DDI} and {SDMX}: {C}omplementary, not competing, standards.
+\newblock Paper, Open Data Foundation (July 2007)
+
+\bibitem{HaltiwangerJarminMiranda2010}
+Haltiwanger, J., Jarmin, R.S., Miranda, J.:
+\newblock Who creates jobs? {S}mall vs. large vs. young.
+\newblock Working Papers 10-17, Center for Economic Studies, U.S. Census Bureau
+  (August 2010)
+
+\bibitem{hensequadt2011}
+Hense, A., Quadt, F.:
+\newblock Acquiring high quality research data.
+\newblock D-Lib Magazine-the Magazine of Digital Library Research \textbf{17}
+  (2011)
+
+\bibitem{Huberman2012}
+Huberman, B.A.:
+\newblock Sociology of science: {B}ig data deserve a bigger audience.
+\newblock Nature \textbf{482}(7385) (February 2012)  308--308
+
+\bibitem{King1995}
+King, G.:
+\newblock Replication, replication.
+\newblock PS: Political Science and Politics \textbf{28}(3) (1995)  444--452
+
+\bibitem{KinneyEtAl2011}
+Kinney, S.K., Reiter, J.P., Reznek, A.P., Miranda, J., Jarmin, R.S., Abowd,
+  J.M.:
+\newblock Towards unrestricted public use business microdata: The synthetic
+  longitudinal business database.
+\newblock International Statistical Review \textbf{79}(3) (December 2011)
+  362--384
+
+\bibitem{Lunati2012}
+Lunati, M.:
+\newblock Oecd expert group for international collaboration on microdata
+  access.
+\newblock Presentation, First Data without Boundaries European Data Access
+  Forum (March 2012)
+
+\bibitem{Ashwin2008}
+Machanavajjhala, A., Kifer, D., Abowd, J.M., Gehrke, J., Vilhuber, L.:
+\newblock Privacy: {T}heory meets practice on the map.
+\newblock International Conference on Data Engineering (ICDE) \textbf{in press}
+  (2008)
+
+\bibitem{OlleyPakes1996}
+Olley, G.S., Pakes, A.:
+\newblock The dynamics of productivity in the telecommunications equipment
+  industry.
+\newblock Econometrica \textbf{64}(6) (November 1996)  1263--1297
+
+\bibitem{Ruggles1991}
+Ruggles, S.:
+\newblock Comparability of the public use files of the {U.S.} {C}ensus of
+  {P}opulation, 1880-1980.
+\newblock Social Science History \textbf{15}(1) (1991)  123--158
+
+\bibitem{RoyalSociety2012}
+{The Royal Society}:
+\newblock Science as an open enterprise: {O}pen data for open science.
+\newblock report 02/12, The Royal Society Science Policy Centre (2012)
+
+\end{thebibliography}

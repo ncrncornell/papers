@@ -1,0 +1,24 @@
+type,level,COUNT,PERCENT,percentsup,cells,typename
+all,f,35,100,0,35,All
+metrononmetro,f,70,100,0,70,Metropolitan and Nonmetro Area
+sic,f,315,100,0,315,SIC
+age,f,325,100,0,325,Age
+isz,f,420,100,0,420,Initial Size
+sz,f,420,100,0,420,Size
+agemetrononmetro,f,650,100,0,650,Age-Metropolitan and Nonmetro Area
+iszmetrononmetro,f,840,100,0,840,Initial Size-Metropolitan and Nonmetro Area
+szmetrononmetro,f,840,100,0,840,Size-Metropolitan and Nonmetro Area
+st,f,1785,100,0,1785,State
+agesic,f,2925,100,0,2925,Age-SIC
+agest,f,18360,100,0,18360,Age-State
+iszst,f,23205,100,0,23205,Initial Size-State
+szst,f,23205,100,0,23205,Size-State
+agemsa,f,118922,99.976460698,0,118950,Age-MSA
+szmsa,f,153688,100,0,153688,Size-MSA
+iszsic,f,3744,99.047619048,1,3780,Initial Size-SIC
+szsic,f,3744,99.047619048,1,3780,Size-SIC
+ageisz,f,3649,94.192049561,5.8,3874,Age-Initial Size
+agesz,f,3577,93.078324226,6.9,3843,Age-Size
+ageiszmetro,f,6988,91.382241402,8.6,7647,Age-Initial Size-Metropolitan Area
+ageszmetrononmetro,f,6855,90.495049505,9.5,7575,Age-Size-Metropolitan and Nonmetro Area
+ageiszsic,f,26691,84.733333333,15.3,31500,Age-Initial Size-SIC

@@ -1,0 +1,16 @@
+type,level,COUNT,PERCENT,percentsup,cells,typename
+all,e,35,100,0,35,All
+isz,e,315,100,0,315,Initial Size
+sic,e,315,100,0,315,SIC
+sz,e,315,100,0,315,Size
+age,e,325,100,0,325,Age
+st,e,1785,100,0,1785,State
+szsic,e,2834,100,0,2834,Size-SIC
+iszsic,e,2835,100,0,2835,Initial Size-SIC
+ageisz,e,2925,100,0,2925,Age-Initial Size
+agesic,e,2925,100,0,2925,Age-SIC
+agesz,e,2925,100,0,2925,Age-Size
+iszst,e,17847,100,0,17847,Initial Size-State
+szst,e,17848,100,0,17848,Size-State
+agest,e,18360,100,0,18360,Age-State
+ageiszsic,e,25994,100,0,25994,Age-Initial Size-SIC

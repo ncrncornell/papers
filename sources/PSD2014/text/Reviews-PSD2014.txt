@@ -1,0 +1,52 @@
+----------------------- REVIEW 1 ---------------------
+PAPER: 28
+TITLE: Using partially synthetic data to replace suppression in the Business Dynamics Statistics: early results
+AUTHORS: Lars Vilhuber and Javier Miranda
+
+OVERALL EVALUATION: 2 (accept)
+REVIEWER'S CONFIDENCE: 5 (expert)
+
+----------- REVIEW -----------
+Using partially synthetic data to replace suppression in the Business Dynamics Statistics
+
+The manuscript describes an interesting project at a very early stage. Finding ways to replace traditional cell suppression in the BDS is certainly important since the percentage of cells that need to be suppressed increased substantially with the more detailed outputs that are released now. Using synthetic data instead of the real data for those sensitive cells seems to be a promising solution to avoid the need for cell suppression, especially since synthetic microdata for this data product is already available. The current version of the paper does not contain any results on the utility and disclosure risk of the proposed approach as the review board at the U.S. Census Bureau did not release the results by the time of the submission. If these results are included in the final version, I only have some minor comments that should be addressed:
+
+p.2, first paragraph: IAB Establishment Panel not IAB-Business Panel
+
+Section 2, first paragraph: I am a little confused by the second sentence: Does the BDS also contain information on households and individuals?
+
+Table 1: Why is there a column of zeros in the table?
+
+p.5, Eq. 1: I guess it should be s>=1
+
+Section 3.1: I would suggest to drop the superscript m since the authors only use one replicate anyway and the description of the algorithm on p.6 wouldn’t be correct if more than one replicate should be used.
+
+p.6: define I^X_t. It is not clear to me, how Eq. 5 should work mathematically. According to the text X^0 should only contain the releasable part of X, but how is that achieved by Eq. 5? If I^X_t is a dummy indicator then X^0 would still contain all cells that should be suppressed later (although all the cell entries for these cells would be set to zero).
+
+top of p.8: I am not sure I understand the sentence: “For each establishment in the suppressed cells, we compute the difference to all synthetic establishments’ values…”. The difference compared to the original values?
+
+p.8: I am not sure I understand what the meaning of coverage is here. How do the authors compute the confidence bounds? Do they only use the variance from imputation? Otherwise I am skeptical whether the coverage rates can be interpreted in a meaningful way. If the authors use confidence bands based on standard sampling uncertainty it would be more useful to compute confidence interval overlap measures as suggested in Karr et al. (2006).
+
+Table 2: The percentage of significant rhos doesn’t tell us whether the same rhos are significant as in the original data. It would be better to count how often the significance changes (from significant to insignificant and vice versa) between the original data and the protected data. Of course, I understand that it will probably not be possible to get these numbers reviewed before the deadline of the final draft. So this is just a suggestion for future versions.
+
+Table 2: I am not sure why emp and estabs entry are even listed in Table 2 if they don’t have any suppressed cells. But maybe I don’t really understand the results in Table 2. For example, why could there be missings in the synthetic version? A little more detail on what is displayed in Table 2 would be helpful.
+
+p.9: I don’t understand the sentence: “Comparing to post-publication improvements to a table with supressions…”. Again a little more detail would be helpful.
+
+Finally, I strongly suggest that the authors read their paper carefully before the final submission to correct a number of spelling mistakes, incomplete sentences, and compiling errors for some of the sub-/superscripts. 
+
+References
+
+Karr, A. F., Kohnen, C. N., Oganian, A., Reiter, J. P., and Sanil, A. P. (2006): A framework for evaluating the utility of data altered to protect confidentiality. The American Statistician 60, 224-232.
+
+
+----------------------- REVIEW 2 ---------------------
+PAPER: 28
+TITLE: Using partially synthetic data to replace suppression in the Business Dynamics Statistics: early results
+AUTHORS: Lars Vilhuber and Javier Miranda
+
+OVERALL EVALUATION: 3 (strong accept)
+REVIEWER'S CONFIDENCE: 4 (high)
+
+----------- REVIEW -----------
+This is very interesting work, authored at a high level of professionalism.  The authors are also very good presenters, so this is a high quality contribution.  The paper itself is a substantive and useful contribution to an increasingly valuable approach to releasing data

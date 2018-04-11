@@ -1,0 +1,17 @@
+
+abowd-vilhuber-block-PSD-2012.tex
+paper.bib
+abstract.tex
+introduction.tex
+main.tex
+discussion.tex
+conclusion.tex
+acronyms.tex
+pie-chart-rdc-data.png 
+accesschart.png
+ConfidentialMetadata.png
+abowd-vilhuber-block-PSD-2012.bbl
+abowd-vilhuber-block-PSD-2012.aux
+llncs.cls
+aliascnt.sty
+

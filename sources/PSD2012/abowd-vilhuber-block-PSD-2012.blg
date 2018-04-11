@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: abowd-vilhuber-block-PSD-2012.aux
+The style file: splncs_srt.bst
+Database file #1: abbrev.bib
+Database file #2: paper.bib
+Warning--entry type for "AbowdVilhuber2010" isn't style-file defined
+--line 50 of file paper.bib
+You've used 18 entries,
+            2410 wiz_defined-function locations,
+            717 strings with 8478 characters,
+and the built_in function-call counts, 6393 in all, are:
+= -- 655
+> -- 304
+< -- 9
++ -- 123
+- -- 101
+* -- 479
+:= -- 1018
+add.period$ -- 18
+call.type$ -- 18
+change.case$ -- 106
+chr.to.int$ -- 0
+cite$ -- 18
+duplicate$ -- 266
+empty$ -- 466
+format.name$ -- 101
+if$ -- 1391
+int.to.chr$ -- 0
+int.to.str$ -- 18
+missing$ -- 12
+newline$ -- 93
+num.names$ -- 38
+pop$ -- 91
+preamble$ -- 1
+purify$ -- 85
+quote$ -- 0
+skip$ -- 212
+stack$ -- 0
+substring$ -- 302
+swap$ -- 112
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 70
+warning$ -- 0
+while$ -- 52
+width$ -- 20
+write$ -- 205
+(There was 1 warning)

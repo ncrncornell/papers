@@ -1,0 +1,81 @@
+We implemented Algorithm~1 for \ac{BDS} tabulations by establishment age and size ({\tt bds\_e\_agesz}). As noted in Table~\ref{tab:bds_e}, about 26\% of all cells have some suppression. For this version of the paper, we analyzed a single variable, ``Job Creation by establishment births'' ({\tt job\_creation\_births}). (Additional analyses are pending release). 
+
+\subsection{Extent of protection}
+\label{sec:protection}
+\input{protection}
+Protection of the table relies in large part on the fact that the data replacing the suppressions is 
+itself synthetic, and released (in the case of the examples in this paper) or (potentially) 
+releasable (for tabulations with geography) to a broad audience \cite{AbowdVilhuber2010}. No 
+establishment's observed data is released in the SynLBD, and only the industry distribution of 
+establishments is preserved exactly. However, in order to consider a broader notion of 
+disclosure avoidance, we proceed as follows. In cell that would have been suppressed under 
+the current regime \textbf{BDS$^{0}$},  we compute the difference between the confidential 
+values of the establishments contributing to this cell, and each of the values of the synthetic 
+establishments contributing to the cell under \textbf{BDS$^{(i)}$}, and assess the distribution of 
+these differences.%
+\footnote{As of June 2014, this distribution had not been released.}
+%In order to describe the protection provided  by the protection mechanism described in 
+%Section~\ref{sec:synthetic_method}, Table~TBD provides a 
+%transition matrix for small values of the (confidential) $X_{k^\prime t}$ against $X_{k^\prime 
+%t}^{s}$, $X_{k^\prime t}^{(i)}$, and 
+%$X_{k^\prime t}^{(ii)}$, for several variables of interest (establishment births and deaths, job 
+%creation and destruction, employment levels). (Table~TBD is being computed and/or pending 
+%release at the time of submission of this document).
+
+\subsection{Analytical validity}
+\label{sec:validity}
+In order to assess the analytical validity of each of the methods, we focus on simple time-series 
+properties of  the $X_{k^\prime t}$. In particular, we estimate a AR(2) process for each of 
+$X_{k^\prime t}$, $X_{k^\prime t}^{s}$, and $X_{k^\prime t}^{(i)}$. % and $X_{k^\prime t}^{(ii)}$,  
+We then assess the number of missing time-series estimates (repeated suppressions in 
+$X_{k^\prime t}^{s}$ may lead to time-series that are too short), the number of significant 
+coefficients for the first lag of the AR(2),  estimated from both the confidential data ($\rho_1$) 
+and the comparison data ($\rho_1^{s}$ and $\rho_1^{(i)}$), and finally two measures of utility: 
+\emph{coverage}, the 
+percentage of regressions where the true $\rho_1$ lies within the confidence band around the 
+coefficient estimated from the comparison $\rho_1^{s}$ and $\rho_1^{(i)}$, and  the interval 
+overlap measure $J_k$ as suggested by \cite{tas2006}.
+%
+Table~\ref{tab:bds_e_pub2} presents these results for {\tt job\_creation\_births}.
+
+%\csvautotabular{programs/r_e_agesz_all_pub2_post.csv}
+\begin{table}
+\caption{Analytic validity of published data\label{tab:bds_e_pub2}}
+\centering
+%\begin{tabular}{|lc|r|rrr|}\hline%
+\csvreader[tabular=|l|r|rr|rrr|rr|rr|,table head=\hline 
+	&Number 
+	&\multicolumn{2}{c|}{} 
+	& \multicolumn{3}{c|}{Percent} 
+	&\multicolumn{2}{c|}{}
+	&\multicolumn{2}{c|}{Interval}\\
+Variable 
+	&feasible 
+	& \multicolumn{2}{c|}{Missing}                
+	& \multicolumn{3}{c|}{significant}
+	&\multicolumn{2}{c|}{Coverage}
+	&\multicolumn{2}{c|}{overlap}\\
+    & $X_{k^\prime t}^{}$ 
+    & $X_{k^\prime t}^{s}$ & $X_{k^\prime t}^{(i)}$
+    & $\rho_1$ & $\rho_1^{s}$&$\rho_1^{(i)}$
+    & $\rho_1^{s}$&$\rho_1^{(i)}$
+    & $J_1^{s}$&$J_1^{(i)}$
+    \\\hline,
+	late after line=\\,late after last line=\\\hline]%
+{programs/r_e_agesz_all_combined_mod.csv}{Variable=\V,Jk=\Jk,Jks=\Jks,coverage=\mycr,coverages=\mycs,missing=\mr,missings=\m2,significanti2=\si,number=\N,significantr2=\sr,significant22=\s2}%
+{\V & \N & \mr & \m2 & \si &\sr & \s2 &\mycr & \mycs & \Jk & \Jks}%
+%{ %\pgfmathsetmacro{\sigpcti}{\significanti2*100}\pgfmathsetmacro{\sigpctr}{\significantr2*100}%
+%\Variable & \number & \coverage & \sigpcti & \sigpctr & \missing}%
+%\Variable & \number & \coverage &  & \missing}%
+%\multicolumn{6}{p{0.75\textwidth}}{\footnotesize Note: Cells are year $x$ categories, where the 
+%number of categories varies by published table.}
+%\end{tabular}
+\end{table}
+
+(Caveat: different definitions of ``job creation births'' in the BDS processing and our 
+post-processing lead to incomplete filling in of missing cells. This will be fixed in later work.) For 
+the one variable that has significant suppressions, the number of feasible regressions in the 
+published data increases substantially (reduction in missing $X_{k^\prime t}^{(i)}$ relative to 
+missing $X_{k^\prime t}^{s}$). The number of correctly estimated coefficients increases (in 
+terms of assessing statistical significance of the coefficient), and utility increases, in terms of 
+$\rho_1$ as well as $J_1$.

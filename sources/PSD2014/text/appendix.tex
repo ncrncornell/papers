@@ -1,0 +1,27 @@
+% $Id: appendix.tex 1720 2015-09-25 14:29:12Z lv39 $
+\appendix
+\section*{Appendix}
+\subsection*{Acronyms}
+\input{acronyms}
+%\clearpage
+
+
+\section*{Additional tables}
+\begin{table}
+\caption{Suppressions in firm-level BDS\label{tab:bds_f}}
+\centering
+\begin{tabular}{lcrr}\hline%
+&&\bfseries No. of&\bfseries Percent\\
+\bfseries Type & \bfseries Level & \bfseries  cells
+& \bfseries  suppressed\\
+\hline
+\\
+\csvreader[head to column names]%
+{programs/bds_f_suppressions.csv}{}%
+{\type & \level & \cells & \percentsup\\}%
+\\\hline
+\multicolumn{4}{p{0.5\textwidth}}{\footnotesize Note: Cells are year $x$ categories, where the 
+number of categories varies by published table.}
+
+\end{tabular}
+\end{table}
