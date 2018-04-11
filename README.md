@@ -1,5 +1,5 @@
 # Papers by the NCRN Cornell node
-All of our papers are accessible through our [eCommons paper repository](https://ecommons.cornell.edu/handle/1813/30503) and/or the LDI Document repository.
+All of our papers are accessible through our [eCommons paper repository](https://ecommons.cornell.edu/handle/1813/30503) and/or the [LDI Document repository](https://digitalcommons.ilr.cornell.edu/ldi/).
 
 Published papers are listed at https://www.ncrn.cornell.edu/publications/.
 
