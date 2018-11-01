@@ -413,7 +413,6 @@ strong baselines: spectral hashing and sign (1-bit) random projections.
   booktitle = {Proceedings of the 2017 International Conference on Management of Data},
   publisher = {ACM},
   year      = {2017},
-  volume    = {forthcoming},
   series    = {SIGMOD '17},
   abstract  = {National statistical agencies around the world publish tabular summaries based on combined employer-employee (ER-EE) data. The privacy of both individuals and business establishments that feature in these data are protected by law in most countries. These data are currently released using a variety of statistical disclosure limitation (SDL) techniques that do not reveal the exact characteristics of particular employers and employees, but lack provable privacy guarantees limiting inferential disclosures.
 	In this work, we present novel algorithms for releasing tabular summaries of linked ER-EE data with formal, provable guarantees of privacy. We show that state-of-the-art differentially private algorithms add too much noise for the output to be useful. Instead, we identify the privacy requirements mandated by current interpretations of the relevant laws, and formalize them using the Pufferfish framework. We then develop new privacy definitions that are customized to ER-EE data and satisfy the statutory privacy requirements. We implement the experiments in this paper on production data gathered by the U.S. Census Bureau. An empirical evaluation of utility for these data shows that for reasonable values of the privacy-loss parameter $\epsilon\geq$ 1, the additive error introduced by our provably private algorithms is comparable, and in some cases better, than the error introduced by existing SDL techniques that have no provable privacy guarantees. For some complex queries currently published, however, our algorithms do not have utility comparable to the existing traditional SDL algorithms. Those queries are fodder for future research.},
@@ -688,4 +687,44 @@ As in our earlier workshop, our goals were to 1. Discuss the specific challenges
 		    doi          = {10.5281/zenodo.1034211},
 		      url          = {https://doi.org/10.5281/zenodo.1034211}
 }
+
+@article{ncrn-summary,
+	author={Daniel H. Weinberg and John M. Abowd and Robert F. Belli and Noel Cressie and David C. Folch and Scott H. Holan and Margaret C. Levenstein and Kristen M. Olson and Jerome P. Reiter and Matthew D. Shapiro and Jolene Smyth and Leen-Kiat Soh and   Bruce D. Spencer and   Seth E. Spielman and   Lars Vilhuber and   Christopher K. Wikle},
+	title={{Effects of a Government-Academic Partnership: Has the NSF-Census Bureau Research Network Helped Improve the U.S. Statistical System?}},
+	year={forthcoming},
+	journal={Journal of Survey Statistics and Methodology},
+	abstract={The National Science Foundation-Census Bureau Research Network (NCRN) was established in 2011 to create interdisciplinary research nodes on methodological questions of interest and significance to the broader research community and to the Federal Statistical System (FSS), particularly the Census Bureau. The activities to date have covered both fundamental and applied statistical research and have focused at least in part on the training of current and future generations of researchers in skills of relevance to surveys and alternative measurement of economic units, households, and persons. This paper discusses some of the key research findings of the eight nodes, organized into six topics: (1) Improving census and survey data collection methods; (2) Using alternative sources of data; (3) Protecting privacy and confidentiality by improving disclosure avoidance; (4) Using spatial and spatio-temporal statistical modeling to improve estimates; (5) Assessing data cost and quality tradeoffs; and (6) Combining information from multiple sources. It also reports on collaborations across nodes and with federal agencies, new software developed, and educational activities and outcomes. The paper concludes with an evaluation of the ability of the FSS to apply the NCRN’s research outcomes and suggests some next steps, as well as the implications of this research-network model for future federal government renewal initiatives.},
+	keywords={},
+	doi={},
+}
+
+
+@TechReport{RePEc:cen:wpaper:17-71,
+	author={Kevin L. McKinney and Andrew S. Green and Lars Vilhuber and John M. Abowd},
+	title={{Total Error and Variability Measures with Integrated Disclosure Limitation for Quarterly Workforce Indicators and LEHD Origin Destination Employment Statistics in On The Map}},
+	year=2017,
+	month=Jan,
+	institution={Center for Economic Studies, U.S. Census Bureau},
+	type={Working Papers},
+	url={https://ideas.repec.org/p/cen/wpaper/17-71.html},
+	number={17-71},
+	abstract={We report results from the rst comprehensive total quality evaluation of five major indicators in the U.S. Census Bureau's Longitudinal Employer-Household Dynamics (LEHD) Program Quarterly Workforce Indicators (QWI): total employment, beginning-of-quarter employment, full-quarter employment, total payroll, and average monthly earnings of full-quarter employees. Beginning-of-quarter employment is also the main tabulation variable in the LEHD Origin-Destination Employment Statistics (LODES) workplace reports as displayed in OnTheMap (OTM). The evaluation is conducted by generating multiple threads of the edit and imputation models used in the LEHD Infrastructure File System. These threads conform to the Rubin (1987) multiple imputation model, with each thread or implicate being the output of formal probability models that address coverage, edit, and imputation errors. Design-based sampling variability and nite population corrections are also included in the evaluation. We derive special formulas for the Rubin total variability and its components that are consistent with the disclosure avoidance system used for QWI and LODES/OTM workplace reports. These formulas allow us to publish the complete set of detailed total quality measures for QWI and LODES. The analysis reveals that the five publication variables under study are estimated very accurately for tabulations involving at least 10 jobs. Tabulations involving three to nine jobs have quality in the range generally deemed acceptable. Tabulations involving zero, one or two jobs, which are generally suppressed in the QWI and synthesized in LODES, have substantial total variability but their publication in LODES allows the formation of larger custom aggregations, which will in general have the accuracy estimated for tabulations in the QWI based on a similar number of workers.},
+	keywords={Multiple imputation; Total quality measures; Employment statistics; Earnings statistics; Total surve},
+	doi={},
+}
+
+@TechReport{RePEc:cen:wpaper:17-34,
+	author={Andrew S. Green and Mark J. Kutzbach and Lars Vilhuber},
+	title={{Two Perspectives on Commuting: A Comparison of Home to Work Flows Across Job-Linked Survey and Administrative Files}},
+	year=2017,
+	month=Jan,
+	institution={Center for Economic Studies, U.S. Census Bureau},
+	type={Working Papers},
+	url={https://ideas.repec.org/p/cen/wpaper/17-34.html},
+	number={17-34},
+	abstract={Commuting flows and workplace employment data have a wide constituency of users including urban and regional planners, social science and transportation researchers, and businesses. The U.S. Census Bureau releases two, national data products that give the magnitude and characteristics of home to work flows. The American Community Survey (ACS) tabulates households’ responses on employment, workplace, and commuting behavior. The Longitudinal Employer-Household Dynamics (LEHD) program tabulates administrative records on jobs in the LEHD Origin-Destination Employment Statistics (LODES). Design differences across the datasets lead to divergence in a comparable statistic: county-to-county aggregate commute flows. To understand differences in the public use data, this study compares ACS and LEHD source files, using identifying information and probabilistic matching to join person and job records. In our assessment, we compare commuting statistics for job frames linked on person, employment status, employer, and workplace and we identify person and job characteristics as well as design features of the data frames that explain aggregate differences. We find a lower rate of within-county commuting and farther commutes in LODES. We attribute these greater distances to differences in workplace reporting and to uncertainty of establishment assignments in LEHD for workers at multi-unit employers. Minor contributing factors include differences in residence location and ACS workplace edits. The results of this analysis and the data infrastructure developed will support further work to understand and enhance commuting statistics in both datasets.},
+	keywords={U.S. Census Bureau; LEHD; LODES; ACS; Employer-employee matched data; Commuting; Record linkage},
+	doi={},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
