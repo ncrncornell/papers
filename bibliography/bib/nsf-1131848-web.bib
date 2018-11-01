@@ -283,31 +283,6 @@ strong baselines: spectral hashing and sign (1-bit) random projections.
     abstract = {Organizations disseminate statistical summaries of administrative data via the Web for unrestricted public use. They balance the trade-off between protection of confidentiality and quality of inference. Recent developments in disclosure avoidance techniques include the incorporation of synthetic data, which capture the essential features of underlying data by releasing altered data generated from a posterior predictive distribution. The US Census Bureau collects millions of interrelated time series microdata that are hierarchical and contain many 0s and suppressions. Rule-based disclosure avoidance techniques often require the suppression of count data for small magnitudes and the modification of data based on a small number of entities. Motivated by this problem, we use zero-inflated extensions of Bayesian generalized linear mixed models with privacy-preserving prior distributions to develop methods for protecting and releasing synthetic data from time series about thousands of small groups of entities without suppression based on the magnitudes or number of entities. We find that, as the prior distributions of the variance components in the Bayesian generalized linear mixed model become more precise towards zero, protection of confidentiality increases and the quality of inference deteriorates. We evaluate our methodology by using a strict privacy measure, empirical differential privacy and a newly defined risk measure, the probability of range identification, which directly measures attribute disclosure risk. We illustrate our results with the US Census Bureau's quarterly workforce indicators.},
     }
 
-@Article{annalsSorting,
-  author        = {John M. Abowd and Francis Kramarz and Sebastien Perez-Duarte and Ian M. Schmutte},
-  title         = {Sorting Between and Within Industries: A Testable Model of Assortative Matching},
-  journal       = {Annals of Economics and Statistics},
-  year          = {2018},
-  issn          = {21154430, 19683863},
-  __markedentry = {[vilhuber:6]},
-  owner         = {vilhuber},
-  timestamp     = {2017.09.21},
-}
-
-@TechReport{ldi40,
-  author      = {John M. Abowd and Francis Kramarz and Sebastien Perez-Duarte and Ian M. Schmutte},
-  title       = {Sorting Between and Within Industries: A Testable Model of Assortative Matching},
-  institution = {Labor Dynamics Institute},
-  year        = {2017},
-  type        = {Document},
-  number      = {40},
-  abstract    = {We test Shimer's (2005) theory of the sorting of workers between and within industrial sectors based on directed search with coordination frictions, deliberately maintaining its static general equilibrium framework. We fit the model to sector-specific wage, vacancy and output data, including publicly-available statistics that characterize the distribution of worker and employer wage heterogeneity across sectors. Our empirical method is general and can be applied to a broad class of assignment models. The results indicate that industries are the loci of sorting--more productive workers are employed in more productive industries. The evidence confirms that strong assortative matching can be present even when worker and employer components of wage heterogeneity are weakly correlated.},
-  owner       = {vilhuber},
-  timestamp   = {2017.09.21},
-  url         = {http://digitalcommons.ilr.cornell.edu/ldi/28/},
-}
-
-
 @InCollection{psd2014a,
   author    = {Drechsler, Jörg and Vilhuber, Lars},
   title     = {Synthetic Longitudinal Business Databases for International Comparisons},
@@ -508,6 +483,18 @@ Funding for the workshop was provided by the National Science Foundation (CNS-10
 }
 
 
+@Article{annalsSorting,
+  author        = {John M. Abowd and Francis Kramarz and Sebastien Perez-Duarte and Ian M. Schmutte},
+  title         = {Sorting Between and Within Industries: A Testable Model of Assortative Matching},
+  journal       = {Annals of Economics and Statistics},
+  year          = {2018},
+  issue = {129},
+  pages = {1-32},
+  doi = {10.15609/annaeconstat2009.129.0001},
+  url = {https://doi.org/10.15609/annaeconstat2009.129.0001},
+  abstract = {We test Shimer's (2005) theory of the sorting of workers between and within industrial sectors based on directed search with coordination frictions, deliberately maintaining its static general equilibrium framework. We fit the model to sector-specific wage, vacancy and output data, including publicly-available statistics that characterize the distribution of worker and employer wage heterogeneity across sectors. Our empirical method is general and can be applied to a broad class of assignment models. The results indicate that industries are the loci of sorting-more productive workers are employed in more productive industries. The evidence confirms that strong assortative matching can be present even when worker and employer components of wage heterogeneity are weakly correlated.}
+}
+
 @TechReport{ldi40,
   author      = {John M. Abowd and Francis Kramarz and Sebastien Perez-Duarte and Ian M. Schmutte},
   title       = {Sorting Between and Within Industries: A Testable Model of Assortative Matching},
@@ -544,6 +531,55 @@ Funding for the workshop was provided by the National Science Foundation (CNS-10
   timestamp   = {2017.09.28},
   url         = {http://digitalcommons.ilr.cornell.edu/ldi/37/},
 }
+
+@TechReport{RePEc:cen:wpaper:17-37,
+	author={John M. Abowd and Ian M. Schmutte},
+	title={{Revisiting the Economics of Privacy: Population Statistics and Confidentiality Protection as Public Goods}},
+	year=2017,
+	month=Jan,
+	institution={Center for Economic Studies, U.S. Census Bureau},
+	type={Working Papers},
+	url={https://ideas.repec.org/p/cen/wpaper/17-37.html},
+	number={17-37},
+	abstract={We consider the problem of determining the optimal accuracy of public statistics when increased accuracy requires a loss of privacy. To formalize this allocation problem, we use tools from statistics and computer science to model the publication technology used by a public statistical agency. We derive the demand for accurate statistics from first principles to generate interdependent preferences that account for the public-good nature of both data accuracy and privacy loss. We first show data accuracy is inefficiently undersupplied by a private provider. Solving the appropriate social planner’s problem produces an implementable publication strategy. We implement the socially optimal publication plan for statistics on income and health status using data from the American Community Survey, National Health Interview Survey, Federal Statistical System Public Opinion Survey and Cornell National Social Survey. Our analysis indicates that welfare losses from providing too much privacy protection and, therefore, too little accuracy can be substantial.},
+	keywords={Demand for public statistics; Technology for statistical agencies; Optimal data accuracy; Optimal co},
+	doi={},
+}
+
+@TechReport{RePEc:cen:wpaper:18-35,
+	author={John M. Abowd and Ian M. Schmutte},
+	title={{An Economic Analysis of Privacy Protection and Statistical Accuracy as Social Choices}},
+	year=2018,
+	month=Aug,
+	institution={Center for Economic Studies, U.S. Census Bureau},
+	type={Working Papers},
+	url={https://ideas.repec.org/p/cen/wpaper/18-35.html},
+	number={18-35},
+	abstract={Statistical agencies face a dual mandate to publish accurate statistics while protecting respondent privacy. Increasing privacy protection requires decreased accuracy. Recognizing this as a resource allocation problem, we propose an economic solution: operate where the marginal cost of increasing privacy equals the marginal benefit. Our model of production, from computer science, assumes data are published using an efficient differentially private algorithm. Optimal choice weighs the demand for accurate statistics against the demand for privacy. Examples from U.S. statistical programs show how our framework can guide decision-making. Further progress requires a better understanding of willingness-to-pay for privacy and statistical accuracy.},
+	keywords={},
+	doi={},
+}
+
+@techreport{abowd2018economic,
+	title={An Economic Analysis of Privacy Protection and Statistical Accuracy as Social Choices},
+	author={John M. Abowd and Ian M. Schmutte},
+	year={2018},
+	eprint={1808.06303},
+	archivePrefix={arXiv},
+	primaryClass={cs.CR},
+	url = { https://arxiv.org/abs/1808.06303},
+	institution = {arXiv},
+	type = {preprint}
+}
+
+@article{abowdschmutte.aer.2018,
+	title={An Economic Analysis of Privacy Protection and Statistical Accuracy as Social Choices},
+	author={John M. Abowd and Ian M. Schmutte},
+	year={forthcoming},
+	journal={American Economic Review},
+	
+}
+
 
 @Article{2541,
   author    = {Samuel Haney and Ashwin Machanavajjhala and John M. Abowd and Matthew Graham and Mark Kutzbach},
