@@ -1,4 +1,23 @@
-% Encoding: ISO-8859-1
+% Encoding: UTF-8
+
+@article{chen2018,
+author = "Chen, Beidi and Shrivastava, Anshumali and Steorts, Rebecca C.",
+doi = "10.1214/18-AOAS1163",
+fjournal = "The Annals of Applied Statistics",
+journal = "Ann. Appl. Stat.",
+month = "06",
+number = "2",
+pages = "1039--1067",
+publisher = "The Institute of Mathematical Statistics",
+title = "Unique entity estimation with application to the Syrian conflict",
+url = "https://doi.org/10.1214/18-AOAS1163",
+volume = "12",
+year = "2018",
+abstract = {Entity resolution identifies and removes duplicate entities in large, noisy databases and has grown in both usage and new developments as a result of increased data availability. Nevertheless, entity resolution has tradeoffs regarding assumptions of the data generation process, error rates, and computational scalability that make it a difficult task for real applications. In this paper, we focus on a related problem of unique entity estimation, which is the task of estimating the unique number of entities and associated standard errors in a data set with duplicate entities. Unique entity estimation shares many fundamental challenges of entity resolution, namely, that the computational cost of all-to-all entity comparisons is intractable for large databases. To circumvent this computational barrier, we propose an efficient (near-linear time) estimation algorithm based on locality sensitive hashing. Our estimator, under realistic assumptions, is unbiased and has provably low variance compared to existing random sampling based approaches. In addition, we empirically show its superiority over the state-of-the-art estimators on three real applications. The motivation for our work is to derive an accurate estimate of the documented, identifiable deaths in the ongoing Syrian conflict. Our methodology, when applied to the Syrian data set, provides an estimate of 191,874Â±1,772 documented, identifiable deaths, which is very close to the Human Rights Data Analysis Group (HRDAG) estimate of 191,369. Our work provides an example of challenges and efforts involved in solving a real, noisy challenging problem where modeling assumptions may not hold.
+
+This project was started when Shrivastava and Steorts were funded by NCRN grants to Cornell and CMU, respectively.}
+}
+
 
 
 @InCollection{raey,
@@ -52,7 +71,7 @@
 }
 
 @InProceedings{LagozeJCDL2014,
-  Title                    = {CED²AR: The Comprehensive Extensible Data Documentation and Access Repository},
+  Title                    = {CEDÂ²AR: The Comprehensive Extensible Data Documentation and Access Repository},
   Author                   = {Carl Lagoze and Lars Vilhuber and Jeremy Williams and Benjamin Perry and William C. Block},
   Booktitle                = {ACM/IEEE Joint Conference on Digital Libraries (JCDL 2014)},
   Year                     = {2014},
@@ -150,9 +169,9 @@ space requirements. Our paper is the first study to demonstrate that b-bit minwi
  location = {Chicago, Illinois, USA},
  pages = {302--310},
  numpages = {9},
-  Abstract		={Many applications (e.g., anomaly detection) concern sparse signals. This paper focuses on the problem of recovering a K-sparse signal x ∈ R/1×N, i.e., K << N and ∑N/i=1 1{xi ≠ 0} = K. In the mainstream framework of compressed sensing (CS), × is recovered from M linear measurements y = xS ∈ R/1×M, where S ∈ RN×M is often a Gaussian (or Gaussian-like) design matrix.
+  Abstract		={Many applications (e.g., anomaly detection) concern sparse signals. This paper focuses on the problem of recovering a K-sparse signal x â R/1ÃN, i.e., K << N and âN/i=1 1{xi â  0} = K. In the mainstream framework of compressed sensing (CS), Ã is recovered from M linear measurements y = xS â R/1ÃM, where S â RNÃM is often a Gaussian (or Gaussian-like) design matrix.
 
-In our proposed method, the design matrix S is generated from an α-stable distribution with α ≈ 0. Our decoding algorithm mainly requires one linear scan of the coordinates, followed by a few iterations on a small number of coordinates which are "undetermined" in the previous iteration. Our practical algorithm consists of two estimators. In the first iteration, the (absolute) minimum estimator is able to filter out a majority of the zero coordinates. The gap estimator, which is applied in each iteration, can accurately recover the magnitudes of the nonzero coordinates. Comparisons with linear programming (LP) and orthogonal matching pursuit (OMP) demonstrate that our algorithm can be significantly faster in decoding speed and more accurate in recovery quality, for the task of exact spare recovery. Our procedure is robust against measurement noise. Even when there are no sufficient measurements, our algorithm can still reliably recover a significant portion of the nonzero coordinates.},
+In our proposed method, the design matrix S is generated from an Î±-stable distribution with Î± â 0. Our decoding algorithm mainly requires one linear scan of the coordinates, followed by a few iterations on a small number of coordinates which are "undetermined" in the previous iteration. Our practical algorithm consists of two estimators. In the first iteration, the (absolute) minimum estimator is able to filter out a majority of the zero coordinates. The gap estimator, which is applied in each iteration, can accurately recover the magnitudes of the nonzero coordinates. Comparisons with linear programming (LP) and orthogonal matching pursuit (OMP) demonstrate that our algorithm can be significantly faster in decoding speed and more accurate in recovery quality, for the task of exact spare recovery. Our procedure is robust against measurement noise. Even when there are no sufficient measurements, our algorithm can still reliably recover a significant portion of the nonzero coordinates.},
  url = {http://doi.acm.org/10.1145/2487575.2487694},
  doi = {10.1145/2487575.2487694},
  acmid = {2487694},
@@ -180,7 +199,7 @@ In our proposed method, the design matrix S is generated from an α-stable distr
   year      = {2014},
   volume    = {33},
   address   = {Reykjavik, Iceland},
-  abstract  = {MinHash and SimHash are the two widely adopted Locality Sensitive Hashing (LSH) algorithms for large-scale data processing applications. Deciding which LSH to use for a particular problem at hand is an important question, which has no clear answer in the existing literature. In this study, we provide a theoretical answer (validated by experiments) that MinHash virtually always outperforms SimHash when the data are binary, as common in practice such as search. The collision probability of MinHash is a function of resemblance similarity (R), while the collision probability of SimHash is a function of cosine similarity (S). To provide a common basis for comparison, we evaluate retrieval results in terms of S for both MinHash and SimHash. This evaluation is valid as we can prove that MinHash is a valid LSH with respect to S, by using a general inequality S2≤R≤S2−S. Our worst case analysis can show that MinHash significantly outperforms SimHash in high similarity region. Interestingly, our intensive experiments reveal that MinHash is also substantially better than SimHash even in datasets where most of the data points are not too similar to each other. This is partly because, in practical data, often R≥Sz−S holds where z is only slightly larger than 2 (e.g., z≤2.1). Our restricted worst case analysis by assuming Sz−S≤R≤S2−S shows that MinHash indeed significantly outperforms SimHash even in low similarity region. We believe the results in this paper will provide valuable guidelines for search in practice, especially when the data are sparse.},
+  abstract  = {MinHash and SimHash are the two widely adopted Locality Sensitive Hashing (LSH) algorithms for large-scale data processing applications. Deciding which LSH to use for a particular problem at hand is an important question, which has no clear answer in the existing literature. In this study, we provide a theoretical answer (validated by experiments) that MinHash virtually always outperforms SimHash when the data are binary, as common in practice such as search. The collision probability of MinHash is a function of resemblance similarity (R), while the collision probability of SimHash is a function of cosine similarity (S). To provide a common basis for comparison, we evaluate retrieval results in terms of S for both MinHash and SimHash. This evaluation is valid as we can prove that MinHash is a valid LSH with respect to S, by using a general inequality S2â¤Râ¤S2âS. Our worst case analysis can show that MinHash significantly outperforms SimHash in high similarity region. Interestingly, our intensive experiments reveal that MinHash is also substantially better than SimHash even in datasets where most of the data points are not too similar to each other. This is partly because, in practical data, often Râ¥SzâS holds where z is only slightly larger than 2 (e.g., zâ¤2.1). Our restricted worst case analysis by assuming SzâSâ¤Râ¤S2âS shows that MinHash indeed significantly outperforms SimHash even in low similarity region. We believe the results in this paper will provide valuable guidelines for search in practice, especially when the data are sparse.},
   file      = {shrivastava14.pdf:http\://jmlr.org/proceedings/papers/v33/shrivastava14.pdf:PDF},
   owner     = {vilhuber},
   timestamp = {2014.07.09},
@@ -195,7 +214,7 @@ In our proposed method, the design matrix S is generated from an α-stable distr
   editor    = {C.J.C. Burges and L. Bottou and M. Welling and Z. Ghahramani and K.Q. Weinberger},
   pages     = {791--799},
   publisher = {Curran Associates, Inc.},
-  abstract  = {We go beyond the notion of pairwise similarity and look into search problems with k-way similarity functions. In this paper, we focus on problems related to 3-way Jaccard similarity: R3way = |S1∩S2∩S3| |S1∪S2∪S3| , S1, S2, S3 ∈ C, where C is a size n collection of sets (or binary vectors). We show that approximate R3way similarity search problems admit fast algorithms with provable guarantees, analogous to the pairwise case. Our analysis and speedup guarantees naturally extend to k-way resemblance. In the process, we extend traditional framework of locality sensitive hashing (LSH) to handle higher-order similarities, which could be of independent theoretical interest. The applicability of R3way search is shown on the “Google Sets” application. In addition, we demonstrate the advantage of R3way resemblance over the pairwise case in improving retrieval quality.},
+  abstract  = {We go beyond the notion of pairwise similarity and look into search problems with k-way similarity functions. In this paper, we focus on problems related to 3-way Jaccard similarity: R3way = |S1â©S2â©S3| |S1âªS2âªS3| , S1, S2, S3 â C, where C is a size n collection of sets (or binary vectors). We show that approximate R3way similarity search problems admit fast algorithms with provable guarantees, analogous to the pairwise case. Our analysis and speedup guarantees naturally extend to k-way resemblance. In the process, we extend traditional framework of locality sensitive hashing (LSH) to handle higher-order similarities, which could be of independent theoretical interest. The applicability of R3way search is shown on the âGoogle Setsâ application. In addition, we demonstrate the advantage of R3way resemblance over the pairwise case in improving retrieval quality.},
   file      = {5216-beyond-pairwise-provably-fast-algorithms-for-approximate-k-way-similarity-search.pdf:http\://papers.nips.cc/paper/5216-beyond-pairwise-provably-fast-algorithms-for-approximate-k-way-similarity-search.pdf:PDF},
   owner     = {vilhuber},
   timestamp = {2013.09.06},
@@ -270,7 +289,7 @@ strong baselines: spectral hashing and sign (1-bit) random projections.
      language = {English},
      year = {2015},
      publisher = {Brookings Institution Press},
-     copyright = {Copyright © 2015 Brookings Institution Press},
+     copyright = {Copyright Â© 2015 Brookings Institution Press},
     }
 
  @article {RSSA:RSSA12100,
@@ -548,7 +567,7 @@ url = {https://doi.org/10.1086/694104},
 	type={Working Papers},
 	url={https://ideas.repec.org/p/cen/wpaper/17-37.html},
 	number={17-37},
-	abstract={We consider the problem of determining the optimal accuracy of public statistics when increased accuracy requires a loss of privacy. To formalize this allocation problem, we use tools from statistics and computer science to model the publication technology used by a public statistical agency. We derive the demand for accurate statistics from first principles to generate interdependent preferences that account for the public-good nature of both data accuracy and privacy loss. We first show data accuracy is inefficiently undersupplied by a private provider. Solving the appropriate social planner’s problem produces an implementable publication strategy. We implement the socially optimal publication plan for statistics on income and health status using data from the American Community Survey, National Health Interview Survey, Federal Statistical System Public Opinion Survey and Cornell National Social Survey. Our analysis indicates that welfare losses from providing too much privacy protection and, therefore, too little accuracy can be substantial.},
+	abstract={We consider the problem of determining the optimal accuracy of public statistics when increased accuracy requires a loss of privacy. To formalize this allocation problem, we use tools from statistics and computer science to model the publication technology used by a public statistical agency. We derive the demand for accurate statistics from first principles to generate interdependent preferences that account for the public-good nature of both data accuracy and privacy loss. We first show data accuracy is inefficiently undersupplied by a private provider. Solving the appropriate social plannerâs problem produces an implementable publication strategy. We implement the socially optimal publication plan for statistics on income and health status using data from the American Community Survey, National Health Interview Survey, Federal Statistical System Public Opinion Survey and Cornell National Social Survey. Our analysis indicates that welfare losses from providing too much privacy protection and, therefore, too little accuracy can be substantial.},
 	keywords={Demand for public statistics; Technology for statistical agencies; Optimal data accuracy; Optimal co},
 	doi={},
 }
@@ -582,9 +601,13 @@ url = {https://doi.org/10.1086/694104},
 @article{abowdschmutte.aer.2018,
 	title={An Economic Analysis of Privacy Protection and Statistical Accuracy as Social Choices},
 	author={John M. Abowd and Ian M. Schmutte},
-	year={forthcoming},
+	year={2019},
 	journal={American Economic Review},
-	
+  issue={1},
+  volume={109},
+  doi={10.1257/aer.20170627},
+  url={https://www.aeaweb.org/articles?id=10.1257/aer.20170627},
+  abstract = {Statistical agencies face a dual mandate to publish accurate statistics while protecting respondent privacy. Increasing privacy protection requires decreased accuracy. Recognizing this as a resource allocation problem, we propose an economic solution: operate where the marginal cost of increasing privacy equals the marginal benefit. Our model of production, from computer science, assumes data are published using an efficient differentially private algorithm. Optimal choice weighs the demand for accurate statistics against the demand for privacy. Examples from U.S. statistical programs show how our framework can guide decision-making. Further progress requires a better understanding of willingness-to-pay for privacy and statistical accuracy.}
 }
 
 
@@ -595,7 +618,7 @@ url = {https://doi.org/10.1086/694104},
   year      = {2017},
   abstract  = {National statistical agencies around the world publish tabular summaries based on combined employer-employee (ER-EE) data. The privacy of both individuals and business establishments that feature in these data are protected by law in most countries. These data are currently released using a variety of statistical disclosure limitation (SDL) techniques that do not reveal the exact characteristics of particular employers and employees, but lack provable privacy guarantees limiting inferential disclosures.
 
-In this work, we present novel algorithms for releasing tabular summaries of linked ER-EE data with formal, provable guarantees of privacy. We show that state-of-the-art differentially private algorithms add too much noise for the output to be useful. Instead, we identify the privacy requirements mandated by current interpretations of the relevant laws, and formalize them using the Pufferfish framework. We then develop new privacy definitions that are customized to ER-EE data and satisfy the statutory privacy requirements. We implement the experiments in this paper on production data gathered by the U.S. Census Bureau. An empirical evaluation of utility for these data shows that for reasonable values of the privacy-loss parameter ε>= 1, the additive error introduced by our provably private algorithms is comparable, and in some cases better, than the error introduced by existing SDL techniques that have no provable privacy guarantees. For some complex queries currently published, however, our algorithms do not have utility comparable to the existing traditional SDL algorithms. Those queries are fodder for future research.},
+In this work, we present novel algorithms for releasing tabular summaries of linked ER-EE data with formal, provable guarantees of privacy. We show that state-of-the-art differentially private algorithms add too much noise for the output to be useful. Instead, we identify the privacy requirements mandated by current interpretations of the relevant laws, and formalize them using the Pufferfish framework. We then develop new privacy definitions that are customized to ER-EE data and satisfy the statutory privacy requirements. We implement the experiments in this paper on production data gathered by the U.S. Census Bureau. An empirical evaluation of utility for these data shows that for reasonable values of the privacy-loss parameter Îµ>= 1, the additive error introduced by our provably private algorithms is comparable, and in some cases better, than the error introduced by existing SDL techniques that have no provable privacy guarantees. For some complex queries currently published, however, our algorithms do not have utility comparable to the existing traditional SDL algorithms. Those queries are fodder for future research.},
   doi       = {10.1145/3035918.3035940},
   isbn      = {978-1-4503-4197-4},
   owner     = {vilhuber},
@@ -610,7 +633,7 @@ In this work, we present novel algorithms for releasing tabular summaries of lin
   year        = {2017},
   type        = {Preprint},
   number      = {1813:49652},
-  abstract    = {Utility Cost of Formal Privacy for Releasing National Employer-Employee Statistics Haney, Samuel; Machanavajjhala, Ashwin; Abowd, John M; Graham, Matthew; Kutzbach, Mark National statistical agencies around the world publish tabular summaries based on combined employeremployee (ER-EE) data. The privacy of both individuals and business establishments that feature in these data are protected by law in most countries. These data are currently released using a variety of statistical disclosure limitation (SDL) techniques that do not reveal the exact characteristics of particular employers and employees, but lack provable privacy guarantees limiting inferential disclosures. In this work, we present novel algorithms for releasing tabular summaries of linked ER-EE data with formal, provable guarantees of privacy. We show that state-of-the-art differentially private algorithms add too much noise for the output to be useful. Instead, we identify the privacy requirements mandated by current interpretations of the relevant laws, and formalize them using the Pufferfish framework. We then develop new privacy definitions that are customized to ER-EE data and satisfy the statutory privacy requirements. We implement the experiments in this paper on production data gathered by the U.S. Census Bureau. An empirical evaluation of utility for these data shows that for reasonable values of the privacy-loss parameter ϵ>=1, the additive error introduced by our provably private algorithms is comparable, and in some cases better, than the error introduced by existing SDL techniques that have no provable privacy guarantees. For some complex queries currently published, however, our algorithms do not have utility comparable to the existing traditional \&quot;This Article is brought to you for free and open access by the Centers, Institutes, Programs at DigitalCommons@ILR. It has been accepted for inclusion in Labor Dynamics Institute by an authorized administrator of DigitalCommons@ILR. For more information, please contact hlmdigital@cornell.edu.\&quot;},
+  abstract    = {Utility Cost of Formal Privacy for Releasing National Employer-Employee Statistics Haney, Samuel; Machanavajjhala, Ashwin; Abowd, John M; Graham, Matthew; Kutzbach, Mark National statistical agencies around the world publish tabular summaries based on combined employeremployee (ER-EE) data. The privacy of both individuals and business establishments that feature in these data are protected by law in most countries. These data are currently released using a variety of statistical disclosure limitation (SDL) techniques that do not reveal the exact characteristics of particular employers and employees, but lack provable privacy guarantees limiting inferential disclosures. In this work, we present novel algorithms for releasing tabular summaries of linked ER-EE data with formal, provable guarantees of privacy. We show that state-of-the-art differentially private algorithms add too much noise for the output to be useful. Instead, we identify the privacy requirements mandated by current interpretations of the relevant laws, and formalize them using the Pufferfish framework. We then develop new privacy definitions that are customized to ER-EE data and satisfy the statutory privacy requirements. We implement the experiments in this paper on production data gathered by the U.S. Census Bureau. An empirical evaluation of utility for these data shows that for reasonable values of the privacy-loss parameter Ïµ>=1, the additive error introduced by our provably private algorithms is comparable, and in some cases better, than the error introduced by existing SDL techniques that have no provable privacy guarantees. For some complex queries currently published, however, our algorithms do not have utility comparable to the existing traditional \&quot;This Article is brought to you for free and open access by the Centers, Institutes, Programs at DigitalCommons@ILR. It has been accepted for inclusion in Labor Dynamics Institute by an authorized administrator of DigitalCommons@ILR. For more information, please contact hlmdigital@cornell.edu.\&quot;},
   owner       = {vilhuber},
   timestamp   = {2017.09.28},
   url         = {http://hdl.handle.net/1813/49652},
@@ -693,19 +716,20 @@ As in our earlier workshop, our goals were to 1. Discuss the specific challenges
 	type={Working Papers},
 	url={https://ideas.repec.org/p/cen/wpaper/17-59r.html},
 	number={17-59r},
-	abstract={The National Science Foundation-Census Bureau Research Network (NCRN) was established in 2011 to create interdisciplinary research nodes on methodological questions of interest and significance to the broader research community and to the Federal Statistical System (FSS), particularly the Census Bureau. The activities to date have covered both fundamental and applied statistical research and have focused at least in part on the training of current and future generations of researchers in skills of relevance to surveys and alternative measurement of economic units, households, and persons. This paper discusses some of the key research findings of the eight nodes, organized into six topics: (1) Improving census and survey data collection methods; (2) Using alternative sources of data; (3) Protecting privacy and confidentiality by improving disclosure avoidance; (4) Using spatial and spatio-temporal statistical modeling to improve estimates; (5) Assessing data cost and quality tradeoffs; and (6) Combining information from multiple sources. It also reports on collaborations across nodes and with federal agencies, new software developed, and educational activities and outcomes. The paper concludes with an evaluation of the ability of the FSS to apply the NCRN’s research outcomes and suggests some next steps, as well as the implications of this research-network model for future federal government renewal initiatives.},
+	abstract={The National Science Foundation-Census Bureau Research Network (NCRN) was established in 2011 to create interdisciplinary research nodes on methodological questions of interest and significance to the broader research community and to the Federal Statistical System (FSS), particularly the Census Bureau. The activities to date have covered both fundamental and applied statistical research and have focused at least in part on the training of current and future generations of researchers in skills of relevance to surveys and alternative measurement of economic units, households, and persons. This paper discusses some of the key research findings of the eight nodes, organized into six topics: (1) Improving census and survey data collection methods; (2) Using alternative sources of data; (3) Protecting privacy and confidentiality by improving disclosure avoidance; (4) Using spatial and spatio-temporal statistical modeling to improve estimates; (5) Assessing data cost and quality tradeoffs; and (6) Combining information from multiple sources. It also reports on collaborations across nodes and with federal agencies, new software developed, and educational activities and outcomes. The paper concludes with an evaluation of the ability of the FSS to apply the NCRNâs research outcomes and suggests some next steps, as well as the implications of this research-network model for future federal government renewal initiatives.},
 	keywords={},
 	doi={},
 }
 
-@article{ncrn-summary,
-	author={Daniel H. Weinberg and John M. Abowd and Robert F. Belli and Noel Cressie and David C. Folch and Scott H. Holan and Margaret C. Levenstein and Kristen M. Olson and Jerome P. Reiter and Matthew D. Shapiro and Jolene Smyth and Leen-Kiat Soh and   Bruce D. Spencer and   Seth E. Spielman and   Lars Vilhuber and   Christopher K. Wikle},
-	title={{Effects of a Government-Academic Partnership: Has the NSF-Census Bureau Research Network Helped Improve the U.S. Statistical System?}},
-	year={forthcoming},
-	journal={Journal of Survey Statistics and Methodology},
-	abstract={The National Science Foundation-Census Bureau Research Network (NCRN) was established in 2011 to create interdisciplinary research nodes on methodological questions of interest and significance to the broader research community and to the Federal Statistical System (FSS), particularly the Census Bureau. The activities to date have covered both fundamental and applied statistical research and have focused at least in part on the training of current and future generations of researchers in skills of relevance to surveys and alternative measurement of economic units, households, and persons. This paper discusses some of the key research findings of the eight nodes, organized into six topics: (1) Improving census and survey data collection methods; (2) Using alternative sources of data; (3) Protecting privacy and confidentiality by improving disclosure avoidance; (4) Using spatial and spatio-temporal statistical modeling to improve estimates; (5) Assessing data cost and quality tradeoffs; and (6) Combining information from multiple sources. It also reports on collaborations across nodes and with federal agencies, new software developed, and educational activities and outcomes. The paper concludes with an evaluation of the ability of the FSS to apply the NCRN’s research outcomes and suggests some next steps, as well as the implications of this research-network model for future federal government renewal initiatives.},
-	keywords={},
-	doi={},
+@Article{ncrn-summary,
+  author   = {Daniel H. Weinberg and John M. Abowd and Robert F. Belli and Noel Cressie and David C. Folch and Scott H. Holan and Margaret C. Levenstein and Kristen M. Olson and Jerome P. Reiter and Matthew D. Shapiro and Jolene Smyth and Leen-Kiat Soh and Bruce D. Spencer and Seth E. Spielman and Lars Vilhuber and Christopher K. Wikle},
+  title    = {{Effects of a Government-Academic Partnership: Has the NSF-Census Bureau Research Network Helped Improve the U.S. Statistical System?}},
+  journal  = {Journal of Survey Statistics and Methodology},
+  year     = {2018},
+  abstract = {The National Science Foundation-Census Bureau Research Network (NCRN) was established in 2011 to create interdisciplinary research nodes on methodological questions of interest and significance to the broader research community and to the Federal Statistical System (FSS), particularly the Census Bureau. The activities to date have covered both fundamental and applied statistical research and have focused at least in part on the training of current and future generations of researchers in skills of relevance to surveys and alternative measurement of economic units, households, and persons. This paper discusses some of the key research findings of the eight nodes, organized into six topics: (1) Improving census and survey data collection methods; (2) Using alternative sources of data; (3) Protecting privacy and confidentiality by improving disclosure avoidance; (4) Using spatial and spatio-temporal statistical modeling to improve estimates; (5) Assessing data cost and quality tradeoffs; and (6) Combining information from multiple sources. It also reports on collaborations across nodes and with federal agencies, new software developed, and educational activities and outcomes. The paper concludes with an evaluation of the ability of the FSS to apply the NCRNâs research outcomes and suggests some next steps, as well as the implications of this research-network model for future federal government renewal initiatives.},
+  doi      = {10.1093/jssam/smy023},
+  eprint   = {/oup/backfile/content_public/journal/jssam/pap/10.1093_jssam_smy023/1/smy023.pdf},
+  url      = {https://doi.org/10.1093/jssam/smy023},
 }
 
 
@@ -732,7 +756,7 @@ As in our earlier workshop, our goals were to 1. Discuss the specific challenges
 	type={Working Papers},
 	url={https://ideas.repec.org/p/cen/wpaper/17-34.html},
 	number={17-34},
-	abstract={Commuting flows and workplace employment data have a wide constituency of users including urban and regional planners, social science and transportation researchers, and businesses. The U.S. Census Bureau releases two, national data products that give the magnitude and characteristics of home to work flows. The American Community Survey (ACS) tabulates households’ responses on employment, workplace, and commuting behavior. The Longitudinal Employer-Household Dynamics (LEHD) program tabulates administrative records on jobs in the LEHD Origin-Destination Employment Statistics (LODES). Design differences across the datasets lead to divergence in a comparable statistic: county-to-county aggregate commute flows. To understand differences in the public use data, this study compares ACS and LEHD source files, using identifying information and probabilistic matching to join person and job records. In our assessment, we compare commuting statistics for job frames linked on person, employment status, employer, and workplace and we identify person and job characteristics as well as design features of the data frames that explain aggregate differences. We find a lower rate of within-county commuting and farther commutes in LODES. We attribute these greater distances to differences in workplace reporting and to uncertainty of establishment assignments in LEHD for workers at multi-unit employers. Minor contributing factors include differences in residence location and ACS workplace edits. The results of this analysis and the data infrastructure developed will support further work to understand and enhance commuting statistics in both datasets.},
+	abstract={Commuting flows and workplace employment data have a wide constituency of users including urban and regional planners, social science and transportation researchers, and businesses. The U.S. Census Bureau releases two, national data products that give the magnitude and characteristics of home to work flows. The American Community Survey (ACS) tabulates householdsâ responses on employment, workplace, and commuting behavior. The Longitudinal Employer-Household Dynamics (LEHD) program tabulates administrative records on jobs in the LEHD Origin-Destination Employment Statistics (LODES). Design differences across the datasets lead to divergence in a comparable statistic: county-to-county aggregate commute flows. To understand differences in the public use data, this study compares ACS and LEHD source files, using identifying information and probabilistic matching to join person and job records. In our assessment, we compare commuting statistics for job frames linked on person, employment status, employer, and workplace and we identify person and job characteristics as well as design features of the data frames that explain aggregate differences. We find a lower rate of within-county commuting and farther commutes in LODES. We attribute these greater distances to differences in workplace reporting and to uncertainty of establishment assignments in LEHD for workers at multi-unit employers. Minor contributing factors include differences in residence location and ACS workplace edits. The results of this analysis and the data infrastructure developed will support further work to understand and enhance commuting statistics in both datasets.},
 	keywords={U.S. Census Bureau; LEHD; LODES; ACS; Employer-employee matched data; Commuting; Record linkage},
 	doi={},
 }
@@ -765,23 +789,144 @@ url = {http://www2.ncrn.cornell.edu/ced2ar-web/codebooks/ssb/v/v7}
                   Stanley, Jordan C. and
                   Vilhuber, Lars},
   institution = {{Cornell Institute for Social and Economic Research} and {Labor Dynamics Institute}. Cornell University},
-  type = {Codebook},
+ 	type = {PDF and DDI code},
   number = {V20181102b-pdf},
   month        = nov,
   year         = 2018,
   doi          = {10.5281/zenodo.1477099},
-  url          = {https://doi.org/10.5281/zenodo.1477099}
+  url          = {https://doi.org/10.5281/zenodo.1477099},
+  abstract = {The SIPP Synthetic Beta (SSB) is a Census Bureau product that integrates person-level micro-data from a household survey with administrative tax and benefit data. These data link respondents from the Survey of Income and Program Participation (SIPP) to Social Security Administration (SSA)/Internal Revenue Service (IRS) Form W-2 records and SSA records of retirement and disability benefit receipt, and were produced by Census Bureau staff economists and statisticians in collaboration with researchers at Cornell University, the SSA and the IRS. The purpose of the SSB is to provide access to linked data that are usually not publicly available due to confidentiality concerns. To overcome these concerns, Census has synthesized, or modeled, all the variables in a way that changes the record of each individual in a manner designed to preserve the underlying covariate relationships between the variables. The only variables that were not altered by the synthesis process and still contain their original values are gender and a link to the first reported marital partner in the survey. Eight SIPP panels (1990, 1991, 1992, 1993, 1996, 2001, 2004, 2008) form the basis for the SSB, with a large subset of variables available across all the panels selected for inclusion and harmonization across the years. Administrative data were added and some editing was done to correct for logical inconsistencies in the IRS/SSA earnings and benefits data.}
 }
 
-@online{reeder_lori_b_2018_1477097,
+@techreport{reeder_lori_b_2018_1477097,
   author       = {Reeder, Lori B. and
                   Stanley, Jordan C. and
                   Lars Vilhuber},
+  institution = { {Labor Dynamics Institute}. Cornell University},
+  type = {Codebook},
   title        = {{Codebook for the SIPP Synthetic Beta 7.0 (DDI-C
                    and PDF)}},
   month        = nov,
   year         = 2018,
   doi          = {10.5281/zenodo.1477097},
-  url          = {https://doi.org/10.5281/zenodo.1477097}
+  url          = {https://doi.org/10.5281/zenodo.1477097},
+  abstract = {The SIPP Synthetic Beta (SSB) is a Census Bureau product that integrates person-level micro-data from a household survey with administrative tax and benefit data. These data link respondents from the Survey of Income and Program Participation (SIPP) to Social Security Administration (SSA)/Internal Revenue Service (IRS) Form W-2 records and SSA records of retirement and disability benefit receipt, and were produced by Census Bureau staff economists and statisticians in collaboration with researchers at Cornell University, the SSA and the IRS. The purpose of the SSB is to provide access to linked data that are usually not publicly available due to confidentiality concerns. To overcome these concerns, Census has synthesized, or modeled, all the variables in a way that changes the record of each individual in a manner designed to preserve the underlying covariate relationships between the variables. The only variables that were not altered by the synthesis process and still contain their original values are gender and a link to the first reported marital partner in the survey. Eight SIPP panels (1990, 1991, 1992, 1993, 1996, 2001, 2004, 2008) form the basis for the SSB, with a large subset of variables available across all the panels selected for inclusion and harmonization across the years. Administrative data were added and some editing was done to correct for logical inconsistencies in the IRS/SSA earnings and benefits data.}
 }
+
+@techreport{lars_vilhuber_2016_2527910,
+	author       = {Lars Vilhuber},
+	title        = {{ncrncornell/ced2ar-synlbd-codebook: DDI Codebook
+	for the Synthetic LBD}},
+  institution = { {Labor Dynamics Institute}. Cornell University},
+	type = {PDF and DDI code},
+	month        = nov,
+	year         = 2016,
+	doi          = {10.5281/zenodo.2527910},
+	url          = {https://doi.org/10.5281/zenodo.2527910},
+	abstract = {Codebook for the Synthetic LBD, a Census Bureau data product, see \url{https://www.census.gov/ces/dataproducts/synlbd/}.
+
+	The SynLBD usage model relies on a Synthetic Data Server, maintained (as of 2018) by Cornell University, see \url{https://www2.vrdc.cornell.edu/news/synthetic-data-server/}.
+
+	Live version of the DDI codebook at \url{https://www2.ncrn.cornell.edu/ced2ar-web/codebooks/synlbd/}
+
+	}
+}
+
+@techreport{lars_vilhuber_2015_2527908,
+	author       = {Lars Vilhuber},
+	title        = {{ncrncornell/ced2ar-nber-ces-codebook: Codebook for
+	NBER-CES Manufacturing Industry Database}},
+	month        = nov,
+	year         = 2015,
+	doi          = {10.5281/zenodo.2527908},
+	url          = {https://doi.org/10.5281/zenodo.2527908},
+	type = {PDF and DDI code},
+  institution = { {Labor Dynamics Institute}. Cornell University},
+  abstract = {Codebook for NBER-CES Manufacturing Industry Database (2009) [NAICS and SIC], by Randy A. Becker , Wayne B. Gray , Jordan Marvakov , and Eric J. Bartelsman
+
+  Main website: \url{https://www.nber.org/data/nberces5809.html} (note: a newer version is available at \url{http://www.nber.org/data/nberces.html} - this codebook does not necessarily reflect the more recent version.)
+
+  Live version of the DDI codebook at \url{https://www2.ncrn.cornell.edu/ced2ar-web/codebooks/nber-ces/}}
+}
+
+@techreport{lars_vilhuber_2015_2527906,
+	author       = {Lars Vilhuber},
+	title        = {{ncrncornell/ced2ar-nqwi-codebook: Codebook for the
+	National QWI [Codebook file]}},
+	month        = oct,
+	year         = 2015,
+	doi          = {10.5281/zenodo.2527906},
+	url          = {https://doi.org/10.5281/zenodo.2527906},
+	type = {PDF and DDI code},
+	institution = { {Labor Dynamics Institute}. Cornell University},
+	abstract = {Codebook for the early research version of National QWI.
+
+	Live version of the DDI codebook at \url{https://www2.ncrn.cornell.edu/ced2ar-web/codebooks/nqwi/}}
+}
+
+@TechReport{privbib20190402,
+  author      = {Abowd, John and Schmutte, Ian and Sexton, William and Vilhuber, Lars},
+  title       = {Introductory Readings in Formal Privacy for Economists},
+  institution = {Labor Dynamics Institute},
+  year        = {2019},
+  number      = {zenodo.2621345},
+  doi         = {10.5281/zenodo.2621345},
+  keywords    = {Privacy, Official Statistics, Differential Privacy, Economics, Economics of Privacy, Statistical Disclosure Limitation},
+  language    = {en},
+  owner       = {vilhuber},
+  publisher   = {Zenodo},
+  timestamp   = {2019.04.04},
+}
+
+@TechReport{aeapp2019,
+  author    = {John M. Abowd and Ian M. Schmutte and William N. Sexton and Lars Vilhuber},
+  title     = {Why the Economics Profession Must Actively Participate in the Privacy Protection Debate},
+  year      = {2019},
+  month     = may,
+  journal   = {AEA Papers and Proceedings},
+  owner     = {vilhuber},
+  timestamp = {2019.04.04},
+}
+
+@TechReport{ldi51,
+  author      = {John M. Abowd and Ian M. Schmutte and William N. Sexton and Lars Vilhuber},
+  title       = {Why the Economics Profession Must Actively Participate in the Privacy Protection Debate},
+  institution = {Labor Dynamics Institute},
+  year        = {2019},
+  type        = {Document},
+  number      = {51},
+  month       = may,
+  owner       = {vilhuber},
+  timestamp   = {2019.04.04},
+  url         = {https://digitalcommons.ilr.cornell.edu/ldi/51/},
+}
+
+@Article{Slavkovic2018,
+  author    = {Aleksandra Slavković and Lars Vilhuber},
+  title     = {Remembering Stephen Fienberg},
+  journal   = {Journal of Privacy and Confidentiality},
+  year      = {2018},
+  volume    = {8},
+  number    = {1},
+  month     = {dec},
+  doi       = {10.29012/jpc.685},
+  owner     = {vilhuber},
+  publisher = {Journal of Privacy and Confidentiality},
+  timestamp = {2019.04.04},
+}
+
+@Article{Vilhuber2018,
+  author    = {Lars Vilhuber},
+  title     = {Relaunching the Journal of Privacy and Confidentiality},
+  journal   = {Journal of Privacy and Confidentiality},
+  year      = {2018},
+  volume    = {8},
+  number    = {1},
+  month     = {dec},
+  doi       = {10.29012/jpc.706},
+  owner     = {vilhuber},
+  publisher = {Journal of Privacy and Confidentiality},
+  timestamp = {2019.04.04},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
